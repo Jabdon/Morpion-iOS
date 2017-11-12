@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EnterNameViewController" customModule="Morpion" customModuleProvider="target">
+            <connections>
+                <outlet property="playerOneLabel" destination="g9H-N9-m9U" id="9Wz-fB-RVT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Player's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zF-FY-IBr" customClass="ScreenTitleLabel" customModule="Morpion" customModuleProvider="target">
+                    <rect key="frame" x="112" y="34" width="151" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nj5-5L-9O6" customClass="TextFieldView" customModule="Morpion" customModuleProvider="target">
+                    <rect key="frame" x="40" y="187" width="295" height="48"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player One Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g9H-N9-m9U" userLabel="PlayerOneName" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="9" width="295" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="g9H-N9-m9U" firstAttribute="centerY" secondItem="Nj5-5L-9O6" secondAttribute="centerY" id="5pm-mh-f6x"/>
+                        <constraint firstAttribute="trailing" secondItem="g9H-N9-m9U" secondAttribute="trailing" id="Jap-Yy-J4o"/>
+                        <constraint firstItem="g9H-N9-m9U" firstAttribute="leading" secondItem="Nj5-5L-9O6" secondAttribute="leading" id="Kc1-Xs-BIb"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ole-Uo-H4d" customClass="RoundButton" customModule="Morpion" customModuleProvider="target">
+                    <rect key="frame" x="60" y="595" width="255" height="30"/>
+                    <state key="normal" title="Start Game"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJJ-VD-Ggb" customClass="TextFieldView" customModule="Morpion" customModuleProvider="target">
+                    <rect key="frame" x="40" y="304" width="295" height="48"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player One Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gtq-fb-RMh" userLabel="PlayerOneName" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="9" width="295" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Gtq-fb-RMh" secondAttribute="trailing" id="gun-ip-J2P"/>
+                        <constraint firstItem="Gtq-fb-RMh" firstAttribute="centerY" secondItem="BJJ-VD-Ggb" secondAttribute="centerY" id="l89-yO-jaF"/>
+                        <constraint firstItem="Gtq-fb-RMh" firstAttribute="leading" secondItem="BJJ-VD-Ggb" secondAttribute="leading" id="n8L-qU-SNa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BJJ-VD-Ggb" firstAttribute="top" secondItem="Nj5-5L-9O6" secondAttribute="bottom" constant="69" id="52J-W7-6Kh"/>
+                <constraint firstItem="ole-Uo-H4d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="5lp-Gd-hXq"/>
+                <constraint firstItem="8zF-FY-IBr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="6Bd-gB-sHj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nj5-5L-9O6" secondAttribute="trailing" constant="40" id="8Ul-hH-AV6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ole-Uo-H4d" secondAttribute="trailing" constant="60" id="FCs-gK-mhY"/>
+                <constraint firstItem="BJJ-VD-Ggb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="304" id="QwL-Vs-nY9"/>
+                <constraint firstItem="BJJ-VD-Ggb" firstAttribute="centerX" secondItem="8zF-FY-IBr" secondAttribute="centerX" id="VuT-ar-wka"/>
+                <constraint firstItem="BJJ-VD-Ggb" firstAttribute="centerX" secondItem="ole-Uo-H4d" secondAttribute="centerX" id="Ypa-dU-jMs"/>
+                <constraint firstItem="BJJ-VD-Ggb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="ZbZ-Wc-EgH"/>
+                <constraint firstItem="BJJ-VD-Ggb" firstAttribute="trailing" secondItem="Nj5-5L-9O6" secondAttribute="trailing" id="fmE-ch-Rth"/>
+                <constraint firstItem="BJJ-VD-Ggb" firstAttribute="leading" secondItem="Nj5-5L-9O6" secondAttribute="leading" id="kAe-ta-Hla"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ole-Uo-H4d" secondAttribute="bottom" constant="42" id="kpo-5n-B6I"/>
+                <constraint firstItem="Nj5-5L-9O6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="nsC-5P-ere"/>
+                <constraint firstAttribute="bottom" secondItem="BJJ-VD-Ggb" secondAttribute="bottom" constant="315" id="qXE-r9-KVK"/>
+                <constraint firstItem="BJJ-VD-Ggb" firstAttribute="top" secondItem="Nj5-5L-9O6" secondAttribute="bottom" constant="69" id="sae-O3-P40"/>
+                <constraint firstItem="Nj5-5L-9O6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="167" id="upE-oZ-Lw9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BJJ-VD-Ggb" secondAttribute="trailing" constant="40" id="zt8-M4-7Ek"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="25.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

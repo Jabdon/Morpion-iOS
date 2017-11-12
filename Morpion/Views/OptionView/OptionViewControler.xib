@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OptionViewControler" customModule="Morpion" customModuleProvider="target">
+            <connections>
+                <outlet property="humanvsCpuButton" destination="BVZ-4Y-anY" id="qfh-Vt-rzS"/>
+                <outlet property="humanvsHumanButton" destination="aps-Mp-l5L" id="857-oa-EmG"/>
+                <outlet property="titleLabel" destination="8gV-6X-mY1" id="1p1-GM-RBS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aps-Mp-l5L" customClass="RoundButton" customModule="Morpion" customModuleProvider="target">
+                    <rect key="frame" x="47" y="219" width="280" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="nxl-DP-zqt"/>
+                        <constraint firstAttribute="width" constant="280" id="slr-i8-DBW"/>
+                    </constraints>
+                    <state key="normal" title="Human vs Human"/>
+                    <connections>
+                        <action selector="selectHumanOption:" destination="-1" eventType="touchUpInside" id="te7-KE-InR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVZ-4Y-anY" customClass="RoundButton" customModule="Morpion" customModuleProvider="target">
+                    <rect key="frame" x="47" y="326" width="280" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="ZRV-MN-uVe"/>
+                        <constraint firstAttribute="width" constant="280" id="eKK-L3-Aii"/>
+                    </constraints>
+                    <state key="normal" title="Human vs CPU"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Your Option" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gV-6X-mY1" customClass="ScreenTitleLabel" customModule="Morpion" customModuleProvider="target">
+                    <rect key="frame" x="116" y="34" width="143" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.21767729922279788" green="0.20532426584762589" blue="0.12793344595397904" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aps-Mp-l5L" firstAttribute="top" secondItem="8gV-6X-mY1" secondAttribute="bottom" constant="164" id="H63-Y8-1TQ"/>
+                <constraint firstItem="8gV-6X-mY1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="Kbl-ta-Kio"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aps-Mp-l5L" secondAttribute="trailing" constant="48" id="SjU-zd-o6q"/>
+                <constraint firstItem="BVZ-4Y-anY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="47" id="Sk3-eG-R4v"/>
+                <constraint firstItem="BVZ-4Y-anY" firstAttribute="top" secondItem="aps-Mp-l5L" secondAttribute="bottom" constant="47" id="SmO-xE-4Ef"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BVZ-4Y-anY" secondAttribute="trailing" constant="48" id="ezo-Om-qMs"/>
+                <constraint firstItem="8gV-6X-mY1" firstAttribute="centerX" secondItem="aps-Mp-l5L" secondAttribute="centerX" id="yIE-BO-ZCR"/>
+                <constraint firstItem="aps-Mp-l5L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="47" id="yha-hf-wQP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>
