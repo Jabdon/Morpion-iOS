@@ -32,7 +32,6 @@ class CustomAlertViewController: UIViewController {
             }
             
         }) { (success) in
-            <#code#>
         }
     }
     

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import UIKit
+
+struct Constant {
+    static let numberOfColumn : CGFloat = 11
+    static let numberOfRow : CGFloat = 17
+}

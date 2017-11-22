@@ -7,21 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB6D4A9C1FA6222200BB1036 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */; };
+		EB6D4AA31FA6791300BB1036 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */; };
+		EB6D4AA91FA7F8C600BB1036 /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */; };
+		EB6D4AB11FA8ABAB00BB1036 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AAF1FA8ABAB00BB1036 /* CustomAlertViewController.swift */; };
+		EB6D4AB21FA8ABAB00BB1036 /* CustomAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB6D4AB01FA8ABAB00BB1036 /* CustomAlertViewController.xib */; };
+		EB6D4AB71FA9492B00BB1036 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AB61FA9492B00BB1036 /* User.swift */; };
+		EB6D4AC21FABF46400BB1036 /* SquareDotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AC01FABF46400BB1036 /* SquareDotCell.swift */; };
+		EB6D4AC31FABF46400BB1036 /* SquareDotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB6D4AC11FABF46400BB1036 /* SquareDotCell.xib */; };
+		EB6D4AC81FABF59E00BB1036 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AC61FABF59E00BB1036 /* BoardViewController.swift */; };
+		EB6D4AC91FABF59E00BB1036 /* BoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB6D4AC71FABF59E00BB1036 /* BoardViewController.xib */; };
+		EBA9FB801FB752C200D3187F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA9FB7F1FB752C200D3187F /* Constants.swift */; };
+		EBA9FB821FB757F100D3187F /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA9FB811FB757F100D3187F /* BoardModel.swift */; };
 		EBC47A0A1FA54DAF00AC96AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC47A091FA54DAF00AC96AE /* AppDelegate.swift */; };
-		EBC47A0C1FA54DAF00AC96AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC47A0B1FA54DAF00AC96AE /* ViewController.swift */; };
-		EBC47A0F1FA54DAF00AC96AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC47A0D1FA54DAF00AC96AE /* Main.storyboard */; };
 		EBC47A111FA54DAF00AC96AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC47A101FA54DAF00AC96AE /* Assets.xcassets */; };
 		EBC47A141FA54DAF00AC96AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC47A121FA54DAF00AC96AE /* LaunchScreen.storyboard */; };
+		EBC47A1F1FA557A600AC96AE /* OptionViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC47A1D1FA557A600AC96AE /* OptionViewControler.swift */; };
+		EBC47A201FA557A600AC96AE /* OptionViewControler.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC47A1E1FA557A600AC96AE /* OptionViewControler.xib */; };
+		EBC47A231FA55AC900AC96AE /* EnterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC47A211FA55AC900AC96AE /* EnterNameViewController.swift */; };
+		EBC47A241FA55AC900AC96AE /* EnterNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC47A221FA55AC900AC96AE /* EnterNameViewController.xib */; };
+		EBC47A281FA60CD900AC96AE /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC47A271FA60CD900AC96AE /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
+		EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
+		EB6D4AAF1FA8ABAB00BB1036 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		EB6D4AB01FA8ABAB00BB1036 /* CustomAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertViewController.xib; sourceTree = "<group>"; };
+		EB6D4AB61FA9492B00BB1036 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EB6D4AC01FABF46400BB1036 /* SquareDotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareDotCell.swift; sourceTree = "<group>"; };
+		EB6D4AC11FABF46400BB1036 /* SquareDotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquareDotCell.xib; sourceTree = "<group>"; };
+		EB6D4AC61FABF59E00BB1036 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		EB6D4AC71FABF59E00BB1036 /* BoardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoardViewController.xib; sourceTree = "<group>"; };
+		EBA9FB7F1FB752C200D3187F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EBA9FB811FB757F100D3187F /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
 		EBC47A061FA54DAF00AC96AE /* Morpion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Morpion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC47A091FA54DAF00AC96AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBC47A0B1FA54DAF00AC96AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EBC47A0E1FA54DAF00AC96AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBC47A101FA54DAF00AC96AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBC47A131FA54DAF00AC96AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBC47A151FA54DAF00AC96AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBC47A1D1FA557A600AC96AE /* OptionViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewControler.swift; sourceTree = "<group>"; };
+		EBC47A1E1FA557A600AC96AE /* OptionViewControler.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionViewControler.xib; sourceTree = "<group>"; };
+		EBC47A211FA55AC900AC96AE /* EnterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameViewController.swift; sourceTree = "<group>"; };
+		EBC47A221FA55AC900AC96AE /* EnterNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterNameViewController.xib; sourceTree = "<group>"; };
+		EBC47A271FA60CD900AC96AE /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +65,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB6D4A9D1FA676B600BB1036 /* TextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */,
+			);
+			path = TextFieldView;
+			sourceTree = "<group>";
+		};
+		EB6D4AA41FA688D200BB1036 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				EB6D4AAF1FA8ABAB00BB1036 /* CustomAlertViewController.swift */,
+				EB6D4AB01FA8ABAB00BB1036 /* CustomAlertViewController.xib */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		EB6D4AA71FA7F86F00BB1036 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				EBC47A271FA60CD900AC96AE /* RoundButton.swift */,
+				EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */,
+				EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		EB6D4AAA1FA8088A00BB1036 /* SquareDot */ = {
+			isa = PBXGroup;
+			children = (
+				EB6D4AC01FABF46400BB1036 /* SquareDotCell.swift */,
+				EB6D4AC11FABF46400BB1036 /* SquareDotCell.xib */,
+			);
+			path = SquareDot;
+			sourceTree = "<group>";
+		};
+		EB6D4AB31FA9481A00BB1036 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB6D4AB61FA9492B00BB1036 /* User.swift */,
+				EBA9FB811FB757F100D3187F /* BoardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB6D4AC41FABF4E300BB1036 /* OptionView */ = {
+			isa = PBXGroup;
+			children = (
+				EBC47A1D1FA557A600AC96AE /* OptionViewControler.swift */,
+				EBC47A1E1FA557A600AC96AE /* OptionViewControler.xib */,
+			);
+			path = OptionView;
+			sourceTree = "<group>";
+		};
+		EB6D4AC51FABF4FB00BB1036 /* EnterNameView */ = {
+			isa = PBXGroup;
+			children = (
+				EBC47A211FA55AC900AC96AE /* EnterNameViewController.swift */,
+				EBC47A221FA55AC900AC96AE /* EnterNameViewController.xib */,
+			);
+			path = EnterNameView;
+			sourceTree = "<group>";
+		};
 		EBC479FD1FA54DAF00AC96AE = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +147,46 @@
 		EBC47A081FA54DAF00AC96AE /* Morpion */ = {
 			isa = PBXGroup;
 			children = (
+				EBC47A261FA60CA100AC96AE /* Components */,
+				EB6D4AB31FA9481A00BB1036 /* Model */,
+				EBC47A1C1FA5573C00AC96AE /* Views */,
 				EBC47A091FA54DAF00AC96AE /* AppDelegate.swift */,
-				EBC47A0B1FA54DAF00AC96AE /* ViewController.swift */,
-				EBC47A0D1FA54DAF00AC96AE /* Main.storyboard */,
 				EBC47A101FA54DAF00AC96AE /* Assets.xcassets */,
 				EBC47A121FA54DAF00AC96AE /* LaunchScreen.storyboard */,
 				EBC47A151FA54DAF00AC96AE /* Info.plist */,
 			);
 			path = Morpion;
+			sourceTree = "<group>";
+		};
+		EBC47A1C1FA5573C00AC96AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB6D4AC51FABF4FB00BB1036 /* EnterNameView */,
+				EB6D4AC41FABF4E300BB1036 /* OptionView */,
+				EBC47A251FA55AE700AC96AE /* Board */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EBC47A251FA55AE700AC96AE /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				EB6D4AC61FABF59E00BB1036 /* BoardViewController.swift */,
+				EB6D4AC71FABF59E00BB1036 /* BoardViewController.xib */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		EBC47A261FA60CA100AC96AE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EB6D4AAA1FA8088A00BB1036 /* SquareDot */,
+				EB6D4AA71FA7F86F00BB1036 /* Shared */,
+				EB6D4AA41FA688D200BB1036 /* Alert */,
+				EB6D4A9D1FA676B600BB1036 /* TextFieldView */,
+				EBA9FB7F1FB752C200D3187F /* Constants.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,9 +248,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC47A201FA557A600AC96AE /* OptionViewControler.xib in Resources */,
 				EBC47A141FA54DAF00AC96AE /* LaunchScreen.storyboard in Resources */,
 				EBC47A111FA54DAF00AC96AE /* Assets.xcassets in Resources */,
-				EBC47A0F1FA54DAF00AC96AE /* Main.storyboard in Resources */,
+				EBC47A241FA55AC900AC96AE /* EnterNameViewController.xib in Resources */,
+				EB6D4AC31FABF46400BB1036 /* SquareDotCell.xib in Resources */,
+				EB6D4AC91FABF59E00BB1036 /* BoardViewController.xib in Resources */,
+				EB6D4AB21FA8ABAB00BB1036 /* CustomAlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +265,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBC47A0C1FA54DAF00AC96AE /* ViewController.swift in Sources */,
+				EB6D4AA91FA7F8C600BB1036 /* ScreenTitleLabel.swift in Sources */,
+				EB6D4AC81FABF59E00BB1036 /* BoardViewController.swift in Sources */,
+				EB6D4AB11FA8ABAB00BB1036 /* CustomAlertViewController.swift in Sources */,
+				EBC47A281FA60CD900AC96AE /* RoundButton.swift in Sources */,
 				EBC47A0A1FA54DAF00AC96AE /* AppDelegate.swift in Sources */,
+				EB6D4AA31FA6791300BB1036 /* TextFieldView.swift in Sources */,
+				EBC47A231FA55AC900AC96AE /* EnterNameViewController.swift in Sources */,
+				EB6D4A9C1FA6222200BB1036 /* NameTextField.swift in Sources */,
+				EB6D4AB71FA9492B00BB1036 /* User.swift in Sources */,
+				EB6D4AC21FABF46400BB1036 /* SquareDotCell.swift in Sources */,
+				EBC47A1F1FA557A600AC96AE /* OptionViewControler.swift in Sources */,
+				EBA9FB821FB757F100D3187F /* BoardModel.swift in Sources */,
+				EBA9FB801FB752C200D3187F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EBC47A0D1FA54DAF00AC96AE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EBC47A0E1FA54DAF00AC96AE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EBC47A121FA54DAF00AC96AE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
