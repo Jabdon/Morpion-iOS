@@ -12,7 +12,7 @@ class BoardModel: NSObject {
     
     let playerOne: User
     let playerTwo: User
-    var currentPlayer: User.UserPlayer!
+    var currentPlayer: User
     var cellcount : Int
     
     var arrayOfUserDot: [User]
@@ -20,7 +20,7 @@ class BoardModel: NSObject {
     init(player1: User, player2: User, cellCount: Int){
         self.playerOne = player1
         self.playerTwo = player2
-        self.currentPlayer = .playerOne
+        self.currentPlayer = player1
         self.cellcount = cellCount
         self.arrayOfUserDot = Array(repeatElement(User(player: .none), count: cellcount))
         
@@ -29,9 +29,10 @@ class BoardModel: NSObject {
     
     private func registerAMove(indexPath: IndexPath)-> Bool {
         // since there is possiblity that user may be nil
-        let user : User? = self.arrayOfUserDot[indexPath.row]
-        if user?.playerType == .none {
-            user?.playerType = currentPlayer
+        var user : User = self.arrayOfUserDot[indexPath.row]
+        if user.playerType == .none {
+            arrayOfUserDot[indexPath.row] = currentPlayer
+            //user = currentPlayer
             return true
         }
         else{
@@ -52,5 +53,16 @@ class BoardModel: NSObject {
         // enter code to check if user wins or not
         
         return result
+    }
+    
+    func changeUserTurn(){
+        switch self.currentPlayer {
+        case playerOne:
+            currentPlayer = playerTwo
+        case playerTwo:
+            currentPlayer = playerOne
+        default: break
+            // should not happen
+        }
     }
 }

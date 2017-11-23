@@ -89,10 +89,25 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         let cellMinSpacing =  self.cellInfo?.cellMinSpacing
         return cellMinSpacing!
     }
-    /*
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-    }*/
+        if boardModel.didUserWin(indexPath: indexPath){
+            // user wins code
+            let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
+            currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
+        }
+        else{
+            let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
+            let data = boardModel.arrayOfUserDot[indexPath.row]
+            currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
+            
+            
+        }
+        boardCollectionview.reloadItems(at: [indexPath])
+        boardModel.changeUserTurn()
+        
+    }
  
     
     

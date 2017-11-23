@@ -45,9 +45,9 @@ class User: NSObject {
     private func userImage( player: UserPlayer) -> UIImage{
         switch player {
         case .playerOne:
-            return UIImage(named: "dot")!
+            return UIImage(named: "circle")!
         case .playerTwo:
-            return UIImage(named: "dot")!
+            return UIImage(named: "cross")!
         case .none:
             return UIImage(named: "dot")!
         }

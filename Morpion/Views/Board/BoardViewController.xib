@@ -58,14 +58,14 @@
                             <color key="textColor" red="0.28738043574924604" green="0.34496437823834192" blue="0.28273266742102016" alpha="0.5043188820422535" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross_64" translatesAutoresizingMaskIntoConstraints="NO" id="zzB-Vj-Zbx">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="zzB-Vj-Zbx">
                             <rect key="frame" x="234" y="44" width="27" height="27"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="27" id="63C-eo-WlO"/>
                                 <constraint firstAttribute="width" constant="27" id="nIy-2y-WKN"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="ee9-Au-OKm">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="ee9-Au-OKm">
                             <rect key="frame" x="114" y="44" width="27" height="27"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="27" id="Bmt-Ot-Wel"/>
@@ -105,7 +105,7 @@
         </view>
     </objects>
     <resources>
-        <image name="cross_64" width="64" height="64"/>
-        <image name="dot" width="12" height="12"/>
+        <image name="circle" width="12" height="12"/>
+        <image name="cross" width="12" height="12"/>
     </resources>
 </document>
