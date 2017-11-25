@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EnterNameViewController" customModule="Morpion" customModuleProvider="target">
             <connections>
                 <outlet property="playerOneLabel" destination="g9H-N9-m9U" id="9Wz-fB-RVT"/>
+                <outlet property="playerTwoLabel" destination="Gtq-fb-RMh" id="iFU-CS-1oY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -46,6 +47,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ole-Uo-H4d" customClass="RoundButton" customModule="Morpion" customModuleProvider="target">
                     <rect key="frame" x="60" y="595" width="255" height="30"/>
                     <state key="normal" title="Start Game"/>
+                    <connections>
+                        <action selector="startGame:" destination="-1" eventType="touchUpInside" id="Rhp-Yw-6HX"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJJ-VD-Ggb" customClass="TextFieldView" customModule="Morpion" customModuleProvider="target">
                     <rect key="frame" x="40" y="304" width="295" height="48"/>

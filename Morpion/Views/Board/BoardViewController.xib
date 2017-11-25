@@ -14,6 +14,8 @@
                 <outlet property="boardCollectionview" destination="7Qc-oF-fzq" id="sed-P2-QIu"/>
                 <outlet property="bottomViewHeight" destination="eKb-cs-fp4" id="FZj-6Q-hyK"/>
                 <outlet property="collectionViewBoard" destination="7Qc-oF-fzq" id="NXq-5K-aeP"/>
+                <outlet property="playerOneNametext" destination="FsN-ZJ-hm4" id="lPY-Wn-vIP"/>
+                <outlet property="playerTwoNametext" destination="lZq-fO-gum" id="AJM-78-axD"/>
                 <outlet property="topViewHeight" destination="NOl-3L-VPK" id="MoY-Fc-bcv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

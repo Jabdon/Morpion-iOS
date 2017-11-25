@@ -17,6 +17,10 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     var cellInfo : CellSizeInfo?
     let boardModel: BoardModel
     
+    @IBOutlet weak var playerOneNametext: UILabel!
+    @IBOutlet weak var playerTwoNametext: UILabel!
+    
+    
     init(playerOne: User, playerTwo: User) {
         self.boardModel = BoardModel(player1: playerOne, player2: playerTwo, cellCount: Int(Constant.numberOfColumn)*Int(Constant.numberOfRow))
         super.init(nibName: nil, bundle: nil)
@@ -29,6 +33,11 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        // assign names
+        playerOneNametext.text = boardModel.playerOne.name
+        playerTwoNametext.text = boardModel.playerTwo.name
+        
+        //set up info name
         self.setCellInfo()
          collectionViewBoard.dataSource = self
         collectionViewBoard.delegate = self
@@ -99,7 +108,6 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
         else{
             let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
-            let data = boardModel.arrayOfUserDot[indexPath.row]
             currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
             
             

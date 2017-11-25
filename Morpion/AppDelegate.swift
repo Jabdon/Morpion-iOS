@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let user1 = User(name: "Vlad", player: .playerOne)
-        let user2 = User(name: "NotVlad", player: .playerTwo)
-        let homeViewController = BoardViewController(playerOne: user1, playerTwo: user2)
+        let homeViewController = OptionViewControler()
         window?.rootViewController = homeViewController
         window?.makeKeyAndVisible()
         return true

@@ -25,6 +25,25 @@ class EnterNameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func startGame(_ sender: Any){
+        
+        
+        
+        if let playerOneName = playerOneLabel.text,let playerTwoName = playerTwoLabel.text, !playerOneName.isEmpty, !playerTwoName.isEmpty  {
+            let player1 = User(name: playerOneName, player: .playerOne)
+            let player2 = User(name: playerTwoName, player: .playerTwo)
+            
+            let boardCollectionView = BoardViewController(playerOne: player1, playerTwo: player2)
+            self.show(boardCollectionView, sender: nil)
+            
+        }
+        else{
+            let alert = UIAlertController(title: "Oops", message: "Name cannot be empty", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+       
+    }
 
     /*
     // MARK: - Navigation
