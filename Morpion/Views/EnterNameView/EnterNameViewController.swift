@@ -27,8 +27,6 @@ class EnterNameViewController: UIViewController {
     
     @IBAction func startGame(_ sender: Any){
         
-        
-        
         if let playerOneName = playerOneLabel.text,let playerTwoName = playerTwoLabel.text, !playerOneName.isEmpty, !playerTwoName.isEmpty  {
             let player1 = User(name: playerOneName, player: .playerOne)
             let player2 = User(name: playerTwoName, player: .playerTwo)

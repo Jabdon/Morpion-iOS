@@ -105,6 +105,10 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             // user wins code
             let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
             currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
+            // win
+            let alert = UIAlertController(title: "Great", message: "Great! \(boardModel.currentPlayer.name!)", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Oh Yeah", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
         else{
             let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
