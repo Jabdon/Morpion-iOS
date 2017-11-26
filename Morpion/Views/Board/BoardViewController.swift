@@ -106,8 +106,17 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
             currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
             // win
-            let alert = UIAlertController(title: "Great", message: "Great! \(boardModel.currentPlayer.name!)", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Oh Yeah", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "We Got A Winner", message: "Congrats! \(boardModel.currentPlayer.name!)", preferredStyle: UIAlertControllerStyle.alert)
+            
+            /*
+             // testing add image in alertview
+            let imgTitle = UIImage(named:"dot")
+            let imgViewTitle = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+            imgViewTitle.image = imgTitle
+            alert.view.addSubview(imgViewTitle)
+             */
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else{
