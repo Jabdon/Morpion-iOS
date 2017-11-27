@@ -16,6 +16,7 @@ class EnterNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround() 
 
         // Do any additional setup after loading the view.
     }
@@ -42,6 +43,16 @@ class EnterNameViewController: UIViewController {
         }
        
     }
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 
     /*
     // MARK: - Navigation

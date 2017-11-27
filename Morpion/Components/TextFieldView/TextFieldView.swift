@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextFieldView: UIView {
+class TextFieldView: UIView  {
 
     override func draw(_ rect: CGRect) {
         // Drawing code
@@ -17,6 +17,8 @@ class TextFieldView: UIView {
         border.frame = CGRect(x:0.0, y: self.frame.height - 1, width: self.frame.width , height: 0.5)
         self.layer.addSublayer(border)
     }
+
+    
     
 
 }
