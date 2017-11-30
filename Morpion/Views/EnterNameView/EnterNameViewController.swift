@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EnterNameViewController: UIViewController {
+class EnterNameViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var playerOneLabel: NameTextField!
     @IBOutlet weak var playerTwoLabel: NameTextField!
@@ -16,7 +16,9 @@ class EnterNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
+        playerOneLabel.delegate = self
+        playerTwoLabel.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -51,6 +53,12 @@ class EnterNameViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newLength = text.utf16.count + string.utf16.count - range.length
+        return newLength <= 8
     }
     
 
