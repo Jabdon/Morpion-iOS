@@ -62,7 +62,7 @@ class BoardModel: NSObject {
                 // we need to check for corners at the beginning
                 if (nextCellAt >= 0 && nextCellAt <= cellcount-1 ) && (arrayOfUserDot[nextCellAt].playerType == currentPlayer.playerType) {
                    alignedPoints += 1
-                    if didHitACorner(index: nextCellAt){ // check if hit right corner
+                    if didHitLeftCorner(index: nextCellAt){ // check if hit right corner
                         // stop checking on the left side immediatelly
                         checkLeftSide = true
                     }
@@ -88,7 +88,7 @@ class BoardModel: NSObject {
                 
                 if (nextCellAt >= 0 && nextCellAt <= cellcount-1 ) && (arrayOfUserDot[nextCellAt].playerType == currentPlayer.playerType) {
                     alignedPoints += 1
-                    if didHitACorner(index: nextCellAt){ // check if hit right corner
+                    if didHitRightCorner(index: nextCellAt){ // check if hit right corner
                         // stop checking on the Right side immediatelly
                         checkRightSide = true
                     }
@@ -119,11 +119,11 @@ class BoardModel: NSObject {
                 
                 if (nextCellAt >= 0 && nextCellAt <= cellcount-1 ) && (arrayOfUserDot[nextCellAt].playerType == currentPlayer.playerType) {
                     alignedPoints += 1
-                    if didHitACorner(index: nextCellAt){ // check if hit right corner
+                    if didHitLeftCorner(index: nextCellAt){ // check if hit right corner
                         // stop checking on the left side immediatelly
                         checkLeftSide = true
                     }
-                    nextCellAt -= (Int(Constant.numberOfColumn) - 1)
+                    nextCellAt += (Int(Constant.numberOfColumn) - 1)
                 }
                 else{
                     // stop checking on the left side immediatelly
@@ -144,11 +144,11 @@ class BoardModel: NSObject {
                 
                 if (nextCellAt >= 0 && nextCellAt <= cellcount-1 ) && (arrayOfUserDot[nextCellAt].playerType == currentPlayer.playerType) {
                     alignedPoints += 1
-                    if didHitACorner(index: nextCellAt){ // check if hit right corner
+                    if didHitRightCorner(index: nextCellAt){ // check if hit right corner
                         // stop checking on the Right side immediatelly
                         checkRightSide = true
                     }
-                    nextCellAt += (Int(Constant.numberOfColumn) - 1)
+                    nextCellAt -= (Int(Constant.numberOfColumn) - 1)
                 }
                 else{
                     // stop checking on the left side immediatelly
