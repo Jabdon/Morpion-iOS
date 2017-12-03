@@ -12,13 +12,24 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var playerOneLabel: NameTextField!
     @IBOutlet weak var playerTwoLabel: NameTextField!
+    @IBOutlet weak var firstTextfieldUiViewTopConstraint: NSLayoutConstraint!
     
+    
+    @IBOutlet weak var secondTextfieldUiView: TextFieldView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playerOneLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 70)
+        playerTwoLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 70)
+        
         self.hideKeyboardWhenTappedAround()
         playerOneLabel.delegate = self
         playerTwoLabel.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        /*
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+ */
 
         // Do any additional setup after loading the view.
     }
@@ -53,12 +64,47 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.25, animations: {
+            self.firstTextfieldUiViewTopConstraint.constant = 151.0
+            self.view.layoutIfNeeded()
+        })
+        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.utf16.count + string.utf16.count - range.length
         return newLength <= 8
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.25, animations: {
+            self.firstTextfieldUiViewTopConstraint.constant = 151.0
+            self.view.layoutIfNeeded()
+        })
+        
+        return false
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification){
+        if let info = notification.userInfo{
+            let rect: CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
+            let keyboardY = view.frame.size.height - rect.height
+            let secondTextFieldUiViewBottomY = self.secondTextfieldUiView.frame.origin.y + self.secondTextfieldUiView.frame.size.height
+            
+            // if keyboard overlaps or blocks the second textfield, then move up textfields
+            if keyboardY <= secondTextFieldUiViewBottomY{
+                self.view.layoutIfNeeded()
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.firstTextfieldUiViewTopConstraint.constant = 100.0
+                    self.view.layoutIfNeeded()
+                })
+                
+            }
+        }
     }
     
 
