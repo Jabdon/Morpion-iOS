@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB0265681FD4984C008E9ABC /* ScoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0265661FD4984C008E9ABC /* ScoreScreen.swift */; };
-		EB0265691FD4984C008E9ABC /* ScoreScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0265671FD4984C008E9ABC /* ScoreScreen.xib */; };
 		EB6D4A9C1FA6222200BB1036 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */; };
 		EB6D4AA31FA6791300BB1036 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */; };
 		EB6D4AA91FA7F8C600BB1036 /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */; };
@@ -32,8 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EB0265661FD4984C008E9ABC /* ScoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScreen.swift; sourceTree = "<group>"; };
-		EB0265671FD4984C008E9ABC /* ScoreScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreScreen.xib; sourceTree = "<group>"; };
 		EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
@@ -69,15 +65,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EB0265651FD4980B008E9ABC /* ScoreView */ = {
-			isa = PBXGroup;
-			children = (
-				EB0265661FD4984C008E9ABC /* ScoreScreen.swift */,
-				EB0265671FD4984C008E9ABC /* ScoreScreen.xib */,
-			);
-			path = ScoreView;
-			sourceTree = "<group>";
-		};
 		EB6D4A9D1FA676B600BB1036 /* TextFieldView */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +161,6 @@
 		EBC47A1C1FA5573C00AC96AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EB0265651FD4980B008E9ABC /* ScoreView */,
 				EB6D4AC51FABF4FB00BB1036 /* EnterNameView */,
 				EB6D4AC41FABF4E300BB1036 /* OptionView */,
 				EBC47A251FA55AE700AC96AE /* Board */,
@@ -266,7 +252,6 @@
 				EBC47A141FA54DAF00AC96AE /* LaunchScreen.storyboard in Resources */,
 				EBC47A111FA54DAF00AC96AE /* Assets.xcassets in Resources */,
 				EBC47A241FA55AC900AC96AE /* EnterNameViewController.xib in Resources */,
-				EB0265691FD4984C008E9ABC /* ScoreScreen.xib in Resources */,
 				EB6D4AC31FABF46400BB1036 /* SquareDotCell.xib in Resources */,
 				EB6D4AC91FABF59E00BB1036 /* BoardViewController.xib in Resources */,
 				EB6D4AB21FA8ABAB00BB1036 /* CustomAlertViewController.xib in Resources */,
@@ -280,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB0265681FD4984C008E9ABC /* ScoreScreen.swift in Sources */,
 				EB6D4AA91FA7F8C600BB1036 /* ScreenTitleLabel.swift in Sources */,
 				EB6D4AC81FABF59E00BB1036 /* BoardViewController.swift in Sources */,
 				EB6D4AB11FA8ABAB00BB1036 /* CustomAlertViewController.swift in Sources */,
