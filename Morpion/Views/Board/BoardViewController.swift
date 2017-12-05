@@ -11,9 +11,18 @@ import UIKit
 class BoardViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionViewBoard: UICollectionView!
-    @IBOutlet weak var topViewHeight: NSLayoutConstraint!
     @IBOutlet weak var bottomViewHeight: NSLayoutConstraint!
     @IBOutlet weak var boardCollectionview: UICollectionView!
+    @IBOutlet weak var scoreBoardContainerHeight: NSLayoutConstraint!
+    @IBOutlet weak var boardCollectionViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var scoreBoardBottomConstraint: NSLayoutConstraint!
+    
+    let constantToMoveUpScoreboardBy: CGFloat = UIScreen.main.bounds.height * 0.9
+    let constantToDismissScoreboardBy: CGFloat = UIScreen.main.bounds.height * 0.2
+    
+    //
+    var scoreBoardIsShown: Bool = false
+    
     var cellInfo : CellSizeInfo?
     let boardModel: BoardModel
     
@@ -32,6 +41,8 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupScoreBoard()
         // Do any additional setup after loading the view.
         // assign names
         playerOneNametext.text = boardModel.playerOne.name
@@ -62,16 +73,18 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
         // CollectionView height must be at least
-        let sizeToWorkWith: CGFloat = screenHeight * (1 - (topViewHeight.multiplier + bottomViewHeight.multiplier))
+        let sizeToWorkWith: CGFloat = boardCollectionViewHeight.multiplier * screenHeight
         var cellDimension: CGFloat = screenWidth / Constant.numberOfColumn
-        var itFits: Bool = true
-        while itFits {
+        var itDoesntFits: Bool = true
+        while itDoesntFits {
+            //check for height
             let newHeight = cellDimension * Constant.numberOfRow
             if(newHeight <= sizeToWorkWith){
-                itFits = false
+                // yay it fits the height
+                itDoesntFits = false
             }
             else{
-                cellDimension -= 1
+                cellDimension -= 0.5
             }
             
         }
@@ -130,8 +143,28 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         
     }
  
+    @IBAction func showOrDismissScoreBoard() {
+        if scoreBoardIsShown{
+            //dismiss it
+            UIView.animate(withDuration: 0.35, animations: {
+                self.scoreBoardBottomConstraint.constant =  self.constantToMoveUpScoreboardBy
+                self.view.layoutIfNeeded()
+            })
+            scoreBoardIsShown = false
+        }
+        else{
+            // then show it
+            UIView.animate(withDuration: 0.35, animations: {
+                self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy
+                self.view.layoutIfNeeded()
+            })
+            scoreBoardIsShown = true
+        }
+    }
     
-    
+    func setupScoreBoard(){
+        scoreBoardBottomConstraint.constant =  constantToMoveUpScoreboardBy
+    }
 
     
 
