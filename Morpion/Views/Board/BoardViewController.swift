@@ -16,6 +16,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var scoreBoardContainerHeight: NSLayoutConstraint!
     @IBOutlet weak var boardCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var scoreBoardBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var boardCollectionWidth: NSLayoutConstraint!
     
     let constantToMoveUpScoreboardBy: CGFloat = UIScreen.main.bounds.height * 0.9
     let constantToDismissScoreboardBy: CGFloat = UIScreen.main.bounds.height * 0.2
@@ -41,8 +42,9 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.clipsToBounds = true
+        self.setupScoreBoard()
         
-        setupScoreBoard()
         // Do any additional setup after loading the view.
         // assign names
         playerOneNametext.text = boardModel.playerOne.name
@@ -74,7 +76,8 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         let screenHeight = screenSize.height
         // CollectionView height must be at least
         let sizeToWorkWith: CGFloat = boardCollectionViewHeight.multiplier * screenHeight
-        var cellDimension: CGFloat = screenWidth / Constant.numberOfColumn
+        let widthToWorkWith: CGFloat = boardCollectionWidth.multiplier * screenWidth
+        var cellDimension: CGFloat = widthToWorkWith / Constant.numberOfColumn
         var itDoesntFits: Bool = true
         while itDoesntFits {
             //check for height
@@ -88,7 +91,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             }
             
         }
-        let cellMinSpacing = (screenWidth - (cellDimension * Constant.numberOfColumn)) / Constant.numberOfColumn
+        let cellMinSpacing = (widthToWorkWith - (cellDimension * Constant.numberOfColumn)) / Constant.numberOfColumn
         self.cellInfo = CellSizeInfo(cellSize: cellDimension, cellMinSpacing: cellMinSpacing)
         
     }

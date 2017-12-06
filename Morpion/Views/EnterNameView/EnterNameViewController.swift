@@ -47,6 +47,7 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
             
             let boardCollectionView = BoardViewController(playerOne: player1, playerTwo: player2)
             self.show(boardCollectionView, sender: nil)
+          
             
         }
         else{
