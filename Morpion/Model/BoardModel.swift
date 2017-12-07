@@ -76,6 +76,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if alignedPoints >= 5{
                     // yay current player wins
+                    currentPlayer.userWins()
                     return true
                 }
             }
@@ -101,6 +102,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if alignedPoints >= 5{
                     // yay current player wins
+                    currentPlayer.userWins()
                     return true
                 }
             }
@@ -132,6 +134,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if alignedPoints >= 5{
                     // yay current player wins
+                    currentPlayer.userWins()
                     return true
                 }
             }
@@ -157,6 +160,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if alignedPoints >= 5{
                     // yay current player wins
+                    currentPlayer.userWins()
                     return true
                 }
             }
@@ -189,6 +193,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if alignedPoints >= 5{
                     // yay current player wins
+                    currentPlayer.userWins()
                     return true
                 }
             }
@@ -214,6 +219,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if alignedPoints >= 5{
                     // yay current player wins
+                    currentPlayer.userWins()
                     return true
                 }
             }
@@ -246,6 +252,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if alignedPoints >= 5{
                     // yay current player wins
+                    currentPlayer.userWins()
                     return true
                 }
             }
@@ -271,6 +278,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if alignedPoints >= 5{
                     // yay current player wins
+                    currentPlayer.userWins()
                     return true
                 }
             }

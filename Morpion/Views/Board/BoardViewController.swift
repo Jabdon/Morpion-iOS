@@ -131,6 +131,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             // user wins code
             let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
             currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
+            updateScoreBoard()
             // win
             let alert = UIAlertController(title: "We Got A Winner", message: "Congrats! \(boardModel.currentPlayer.name!)", preferredStyle: UIAlertControllerStyle.alert)
             
@@ -191,8 +192,8 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         //scoreboard data
         scoreBoardPlayerOneName.text = boardModel.playerOne.name
         scoreBoardPlayerTwoName.text = boardModel.playerTwo.name
-        playerOneScorePts.text =  String (boardModel.playerOne.score)
-        playerTwoScorePts.text =  String (boardModel.playerTwo.score)
+        updateScoreBoard()
+        
         
         //blur effect to background
         /*
@@ -203,8 +204,12 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         scoreBoardBackgroundView.addSubview(blurEffectView)
          */
     }
-
-    
+    func updateScoreBoard() {
+        DispatchQueue.main.async{
+            self.playerOneScorePts.text =  String (self.boardModel.playerOne.score)
+            self.playerTwoScorePts.text =  String (self.boardModel.playerTwo.score)
+        }
+    }
 
     /*
     // MARK: - Navigation
