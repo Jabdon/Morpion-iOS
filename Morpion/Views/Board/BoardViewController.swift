@@ -18,6 +18,15 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var scoreBoardBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var boardCollectionWidth: NSLayoutConstraint!
     
+    // boardscore constraint
+    @IBOutlet weak var scorePlayerTwoView: UIView!
+    @IBOutlet weak var scorePlayerOneView: UIView!
+    @IBOutlet weak var scoreBoardPlayerOneName: UILabel!
+    @IBOutlet weak var scoreBoardPlayerTwoName: UILabel!
+    @IBOutlet weak var playerTwoScorePts: UILabel!
+    @IBOutlet weak var playerOneScorePts: UILabel!
+    
+    
     let constantToMoveUpScoreboardBy: CGFloat = UIScreen.main.bounds.height * 0.9
     let constantToDismissScoreboardBy: CGFloat = UIScreen.main.bounds.height * 0.2
     
@@ -167,6 +176,20 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func setupScoreBoard(){
         scoreBoardBottomConstraint.constant =  constantToMoveUpScoreboardBy
+        
+        // scoreboard
+        scorePlayerOneView.layer.borderWidth = 0.5
+        scorePlayerOneView.layer.borderColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1).cgColor
+        scorePlayerOneView.layer.cornerRadius = 5
+        scorePlayerTwoView.layer.borderWidth = 0.5
+        scorePlayerTwoView.layer.borderColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1).cgColor
+        scorePlayerTwoView.layer.cornerRadius = 5
+        
+        //scoreboard data
+        scoreBoardPlayerOneName.text = boardModel.playerOne.name
+        scoreBoardPlayerTwoName.text = boardModel.playerTwo.name
+        playerOneScorePts.text =  String (boardModel.playerOne.score)
+        playerTwoScorePts.text =  String (boardModel.playerTwo.score)
     }
 
     

@@ -19,9 +19,6 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playerOneLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 70)
-        playerTwoLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 70)
-        
         self.hideKeyboardWhenTappedAround()
         playerOneLabel.delegate = self
         playerTwoLabel.delegate = self

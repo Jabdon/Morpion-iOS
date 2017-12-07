@@ -34,7 +34,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voo-Gu-r9n" customClass="TextFieldView" customModule="Morpion" customModuleProvider="target">
                             <rect key="frame" x="40" y="271" width="334" height="68"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Two Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gtq-fb-RMh" userLabel="PlayerTwoName" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Two Name" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gtq-fb-RMh" userLabel="PlayerTwoName" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="2" width="334" height="64"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -52,7 +52,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nj5-5L-9O6" customClass="TextFieldView" customModule="Morpion" customModuleProvider="target">
                             <rect key="frame" x="40" y="151" width="334" height="68"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player One Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g9H-N9-m9U" userLabel="PlayerOneName" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player One Name" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="g9H-N9-m9U" userLabel="PlayerOneName" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="2" width="334" height="64"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>

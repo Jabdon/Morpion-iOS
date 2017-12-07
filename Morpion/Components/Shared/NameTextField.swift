@@ -14,7 +14,7 @@ class NameTextField: UITextField {
         // Drawing code
         self.borderStyle = .none
         self.layer.backgroundColor = UIColor.white.cgColor
-        self.font = UIFont(name:"AppleSDGothicNeo-Light" , size: 16) 
+        self.font = UIFont(name: "HelveticaNeue-UltraLight", size: 30)
     }
     /*
     override func layoutSubviews() {
