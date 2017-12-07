@@ -17,6 +17,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var boardCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var scoreBoardBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var boardCollectionWidth: NSLayoutConstraint!
+    @IBOutlet weak var scoreBoardBackgroundView: UIView!
     
     // boardscore constraint
     @IBOutlet weak var scorePlayerTwoView: UIView!
@@ -160,6 +161,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             //dismiss it
             UIView.animate(withDuration: 0.35, animations: {
                 self.scoreBoardBottomConstraint.constant =  self.constantToMoveUpScoreboardBy
+                self.scoreBoardBackgroundView.alpha = 0
                 self.view.layoutIfNeeded()
             })
             scoreBoardIsShown = false
@@ -168,6 +170,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             // then show it
             UIView.animate(withDuration: 0.35, animations: {
                 self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy
+                self.scoreBoardBackgroundView.alpha = 1
                 self.view.layoutIfNeeded()
             })
             scoreBoardIsShown = true
@@ -190,6 +193,15 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         scoreBoardPlayerTwoName.text = boardModel.playerTwo.name
         playerOneScorePts.text =  String (boardModel.playerOne.score)
         playerTwoScorePts.text =  String (boardModel.playerTwo.score)
+        
+        //blur effect to background
+        /*
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark )
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = scoreBoardBackgroundView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        scoreBoardBackgroundView.addSubview(blurEffectView)
+         */
     }
 
     
