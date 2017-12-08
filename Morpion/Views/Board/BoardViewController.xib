@@ -19,7 +19,7 @@
                 <outlet property="playerOneNametext" destination="FsN-ZJ-hm4" id="lPY-Wn-vIP"/>
                 <outlet property="playerOneScorePts" destination="7i1-D1-yew" id="7EW-NA-MMX"/>
                 <outlet property="playerTwoNametext" destination="lZq-fO-gum" id="AJM-78-axD"/>
-                <outlet property="playerTwoScorePts" destination="7i1-D1-yew" id="iW5-iJ-ukd"/>
+                <outlet property="playerTwoScorePts" destination="6X3-cL-Duh" id="bUO-U5-Pmd"/>
                 <outlet property="scoreBoardBackgroundView" destination="Sra-xd-HQu" id="yW4-lP-LFz"/>
                 <outlet property="scoreBoardBottomConstraint" destination="p8b-bl-md7" id="PwA-f9-6U8"/>
                 <outlet property="scoreBoardContainerHeight" destination="OLG-lj-UvS" id="Hrj-gf-f6W"/>

@@ -205,10 +205,8 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
          */
     }
     func updateScoreBoard() {
-        DispatchQueue.main.async{
             self.playerOneScorePts.text =  String (self.boardModel.playerOne.score)
             self.playerTwoScorePts.text =  String (self.boardModel.playerTwo.score)
-        }
     }
 
     /*
