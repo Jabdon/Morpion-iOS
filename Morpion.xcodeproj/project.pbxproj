@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB02656B1FDC3EE8008E9ABC /* PlayerNameText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02656A1FDC3EE8008E9ABC /* PlayerNameText.swift */; };
 		EB6D4A9C1FA6222200BB1036 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */; };
 		EB6D4AA31FA6791300BB1036 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */; };
 		EB6D4AA91FA7F8C600BB1036 /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB02656A1FDC3EE8008E9ABC /* PlayerNameText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameText.swift; sourceTree = "<group>"; };
 		EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				EBC47A271FA60CD900AC96AE /* RoundButton.swift */,
 				EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */,
 				EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */,
+				EB02656A1FDC3EE8008E9ABC /* PlayerNameText.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				EB6D4AC81FABF59E00BB1036 /* BoardViewController.swift in Sources */,
 				EB6D4AB11FA8ABAB00BB1036 /* CustomAlertViewController.swift in Sources */,
 				EBC47A281FA60CD900AC96AE /* RoundButton.swift in Sources */,
+				EB02656B1FDC3EE8008E9ABC /* PlayerNameText.swift in Sources */,
 				EBC47A0A1FA54DAF00AC96AE /* AppDelegate.swift in Sources */,
 				EB6D4AA31FA6791300BB1036 /* TextFieldView.swift in Sources */,
 				EBC47A231FA55AC900AC96AE /* EnterNameViewController.swift in Sources */,

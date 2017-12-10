@@ -37,8 +37,12 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     var cellInfo : CellSizeInfo?
     let boardModel: BoardModel
     
-    @IBOutlet weak var playerOneNametext: UILabel!
-    @IBOutlet weak var playerTwoNametext: UILabel!
+    @IBOutlet weak var playerOneNametext: PlayerNameText!
+    @IBOutlet weak var playerTwoNametext: PlayerNameText!
+    
+    @IBOutlet weak var playerOneNameContainer: UIView!
+    @IBOutlet weak var playerTwoNameContainer: UIView!
+    @IBOutlet weak var dismissOrShowButton: UIButton!
     
     
     init(playerOne: User, playerTwo: User) {
@@ -154,6 +158,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
         boardCollectionview.reloadItems(at: [indexPath])
         boardModel.changeUserTurn()
+        updatePlayerNameText()
         
     }
  
@@ -163,6 +168,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             UIView.animate(withDuration: 0.35, animations: {
                 self.scoreBoardBottomConstraint.constant =  self.constantToMoveUpScoreboardBy
                 self.scoreBoardBackgroundView.alpha = 0
+                self.dismissOrShowButton.transform = self.dismissOrShowButton.transform.rotated(by: (180.0 * CGFloat(Double.pi)) / 180.0)
                 self.view.layoutIfNeeded()
             })
             scoreBoardIsShown = false
@@ -172,6 +178,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             UIView.animate(withDuration: 0.35, animations: {
                 self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy
                 self.scoreBoardBackgroundView.alpha = 1
+                self.dismissOrShowButton.transform = self.dismissOrShowButton.transform.rotated(by: (180.0 * CGFloat(Double.pi)) / 180.0)
                 self.view.layoutIfNeeded()
             })
             scoreBoardIsShown = true
@@ -193,6 +200,9 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         scoreBoardPlayerOneName.text = boardModel.playerOne.name
         scoreBoardPlayerTwoName.text = boardModel.playerTwo.name
         updateScoreBoard()
+        updatePlayerNameText()
+        
+        //
         
         
         //blur effect to background
@@ -207,6 +217,66 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     func updateScoreBoard() {
             self.playerOneScorePts.text =  String (self.boardModel.playerOne.score)
             self.playerTwoScorePts.text =  String (self.boardModel.playerTwo.score)
+    }
+    
+    func updatePlayerNameText(){
+        
+        if self.boardModel.currentPlayer == self.boardModel.playerOne{
+            
+            UIView.animate(withDuration: 0.20, animations: {
+                self.setLabelPlayerNameToDefault(View: self.playerTwoNameContainer)
+                self.view.layoutIfNeeded()
+            })
+            UIView.animate(withDuration: 0.40, animations: {
+                self.setLabelPlayerNameToTurn(View: self.playerOneNameContainer)
+                self.view.layoutIfNeeded()
+            })
+            
+            
+        }
+        else{
+            UIView.animate(withDuration: 0.20, animations: {
+                self.setLabelPlayerNameToDefault(View: self.playerOneNameContainer)
+                self.view.layoutIfNeeded()
+            })
+            
+            UIView.animate(withDuration: 0.40, animations: {
+                self.setLabelPlayerNameToTurn(View: self.playerTwoNameContainer)
+                self.view.layoutIfNeeded()
+            })
+            
+            
+        }
+        /*
+        UIView.animate(withDuration: 0.35, animations: {
+            self.view.layoutIfNeeded()
+        })
+        */
+        
+    }
+    
+    func setLabelPlayerNameToTurn(View: UIView){
+        View.layer.borderColor = UIColor.black.cgColor
+        View.layer.cornerRadius = 10
+        View.layer.backgroundColor = UIColor.black.cgColor
+         let labels = View.subviews.flatMap { $0 as? UILabel }
+       // label.tex = UIColor.white
+        for label in labels{
+            label.textColor = UIColor.white
+        }
+        
+    }
+    
+    func setLabelPlayerNameToDefault( View: UIView){
+        View.layer.borderColor = UIColor.black.cgColor
+        View.layer.cornerRadius = 10
+        View.layer.backgroundColor = UIColor(white: 1, alpha: 0.5).cgColor
+        //label.textColor = UIColor.lightGray
+        let labels = View.subviews.flatMap { $0 as? UILabel }
+        for label in labels{
+            label.textColor = UIColor.lightGray
+        }
+        
     }
 
     /*

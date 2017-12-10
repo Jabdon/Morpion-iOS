@@ -16,8 +16,11 @@
                 <outlet property="boardCollectionview" destination="7Qc-oF-fzq" id="sed-P2-QIu"/>
                 <outlet property="bottomViewHeight" destination="eKb-cs-fp4" id="FZj-6Q-hyK"/>
                 <outlet property="collectionViewBoard" destination="7Qc-oF-fzq" id="NXq-5K-aeP"/>
+                <outlet property="dismissOrShowButton" destination="G1q-gu-K9a" id="jl2-mC-7cz"/>
+                <outlet property="playerOneNameContainer" destination="1Hc-o7-ahd" id="wn5-pi-MiQ"/>
                 <outlet property="playerOneNametext" destination="FsN-ZJ-hm4" id="lPY-Wn-vIP"/>
                 <outlet property="playerOneScorePts" destination="7i1-D1-yew" id="7EW-NA-MMX"/>
+                <outlet property="playerTwoNameContainer" destination="7f0-Eb-MGs" id="6Uq-cM-y7g"/>
                 <outlet property="playerTwoNametext" destination="lZq-fO-gum" id="AJM-78-axD"/>
                 <outlet property="playerTwoScorePts" destination="6X3-cL-Duh" id="bUO-U5-Pmd"/>
                 <outlet property="scoreBoardBackgroundView" destination="Sra-xd-HQu" id="yW4-lP-LFz"/>
@@ -48,18 +51,42 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-fh-ZgM" userLabel="Preview Score">
                     <rect key="frame" x="0.0" y="662" width="414" height="73.666666666666629"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="jonathan" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsN-ZJ-hm4">
-                            <rect key="frame" x="0.0" y="21.333333333333371" width="119.33333333333333" height="20.333333333333329"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jonathan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZq-fO-gum">
-                            <rect key="frame" x="294" y="21.333333333333371" width="120" height="20.333333333333329"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7f0-Eb-MGs" userLabel="PlayerTwoNameContainer">
+                            <rect key="frame" x="295" y="21.333333333333371" width="40" height="20.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZq-fO-gum" customClass="PlayerNameText" customModule="Morpion" customModuleProvider="target">
+                                    <rect key="frame" x="4" y="0.0" width="32" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="lZq-fO-gum" secondAttribute="bottom" id="JeI-XD-pNU"/>
+                                <constraint firstAttribute="trailing" secondItem="lZq-fO-gum" secondAttribute="trailing" constant="4" id="Nzi-Uq-bvW"/>
+                                <constraint firstItem="lZq-fO-gum" firstAttribute="leading" secondItem="7f0-Eb-MGs" secondAttribute="leading" constant="4" id="THs-mH-mmn"/>
+                                <constraint firstItem="lZq-fO-gum" firstAttribute="top" secondItem="7f0-Eb-MGs" secondAttribute="top" id="eaf-QI-3pf"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hc-o7-ahd" userLabel="PlayerOneNameContainer">
+                            <rect key="frame" x="44.333333333333343" y="21" width="74" height="20.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="jonathan" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsN-ZJ-hm4" customClass="PlayerNameText" customModule="Morpion" customModuleProvider="target">
+                                    <rect key="frame" x="4" y="0.0" width="66" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="FsN-ZJ-hm4" firstAttribute="leading" secondItem="1Hc-o7-ahd" secondAttribute="leading" constant="4" id="75j-9i-H8d"/>
+                                <constraint firstAttribute="trailing" secondItem="FsN-ZJ-hm4" secondAttribute="trailing" constant="4" id="HdJ-yL-sB3"/>
+                                <constraint firstAttribute="bottom" secondItem="FsN-ZJ-hm4" secondAttribute="bottom" id="K3j-io-5Yd"/>
+                                <constraint firstItem="FsN-ZJ-hm4" firstAttribute="top" secondItem="1Hc-o7-ahd" secondAttribute="top" id="ssG-BM-gKf"/>
+                            </constraints>
+                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="zzB-Vj-Zbx">
                             <rect key="frame" x="263" y="17.666666666666629" width="27" height="27"/>
                             <constraints>
@@ -84,17 +111,15 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="zzB-Vj-Zbx" firstAttribute="leading" secondItem="VhO-HX-kKb" secondAttribute="trailing" constant="45.5" id="190-9J-gnt"/>
+                        <constraint firstItem="7f0-Eb-MGs" firstAttribute="leading" secondItem="zzB-Vj-Zbx" secondAttribute="trailing" constant="5" id="20Z-tD-fJY"/>
                         <constraint firstAttribute="bottom" secondItem="zzB-Vj-Zbx" secondAttribute="bottom" constant="29" id="Gdq-Lg-5dQ"/>
                         <constraint firstAttribute="bottom" secondItem="ee9-Au-OKm" secondAttribute="bottom" constant="29" id="McO-qX-HCj"/>
-                        <constraint firstAttribute="bottom" secondItem="FsN-ZJ-hm4" secondAttribute="bottom" constant="32" id="OcN-4x-6FG"/>
                         <constraint firstItem="VhO-HX-kKb" firstAttribute="centerX" secondItem="2fq-fh-ZgM" secondAttribute="centerX" id="TAU-JY-NJB"/>
-                        <constraint firstItem="ee9-Au-OKm" firstAttribute="leading" secondItem="FsN-ZJ-hm4" secondAttribute="trailing" constant="4" id="bpc-dq-Oh9"/>
-                        <constraint firstAttribute="bottom" secondItem="lZq-fO-gum" secondAttribute="bottom" constant="32" id="mpE-2u-mZF"/>
-                        <constraint firstItem="lZq-fO-gum" firstAttribute="leading" secondItem="zzB-Vj-Zbx" secondAttribute="trailing" constant="4" id="nEw-MQ-poL"/>
+                        <constraint firstItem="ee9-Au-OKm" firstAttribute="leading" secondItem="1Hc-o7-ahd" secondAttribute="trailing" constant="5" id="jGF-CX-FZY"/>
                         <constraint firstItem="VhO-HX-kKb" firstAttribute="leading" secondItem="ee9-Au-OKm" secondAttribute="trailing" constant="46" id="owt-JJ-RQb"/>
-                        <constraint firstAttribute="trailing" secondItem="lZq-fO-gum" secondAttribute="trailing" id="twZ-5M-BMo"/>
+                        <constraint firstAttribute="bottom" secondItem="1Hc-o7-ahd" secondAttribute="bottom" constant="32" id="qhi-05-fDR"/>
+                        <constraint firstAttribute="bottom" secondItem="7f0-Eb-MGs" secondAttribute="bottom" constant="32" id="tj8-ac-COY"/>
                         <constraint firstAttribute="bottom" secondItem="VhO-HX-kKb" secondAttribute="bottom" constant="29" id="vwQ-De-HdQ"/>
-                        <constraint firstItem="FsN-ZJ-hm4" firstAttribute="leading" secondItem="2fq-fh-ZgM" secondAttribute="leading" id="yuk-DR-8Jl"/>
                     </constraints>
                 </view>
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sra-xd-HQu" userLabel="scoreBoardBackgroundView">
