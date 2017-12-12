@@ -43,6 +43,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var playerOneNameContainer: UIView!
     @IBOutlet weak var playerTwoNameContainer: UIView!
     @IBOutlet weak var dismissOrShowButton: UIButton!
+    @IBOutlet weak var scoreboardView: UIView!
     
     
     init(playerOne: User, playerTwo: User) {
@@ -165,10 +166,12 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBAction func showOrDismissScoreBoard() {
         if scoreBoardIsShown{
             //dismiss it
-            UIView.animate(withDuration: 0.35, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 self.scoreBoardBottomConstraint.constant =  self.constantToMoveUpScoreboardBy
                 self.scoreBoardBackgroundView.alpha = 0
                 self.dismissOrShowButton.transform = self.dismissOrShowButton.transform.rotated(by: (180.0 * CGFloat(Double.pi)) / 180.0)
+                // remove shadow
+                self.scoreboardView.layer.shadowOpacity = 0.0
                 self.view.layoutIfNeeded()
             })
             scoreBoardIsShown = false
@@ -210,6 +213,10 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
                     // the code you put here will be compiled once the animation finishes
                     UIView.animate(withDuration: 0.05, animations: {
                         self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy
+                        self.scoreboardView.layer.shadowColor = UIColor.lightGray.cgColor
+                        self.scoreboardView.layer.shadowOpacity = 0.1
+                        self.scoreboardView.layer.shadowOffset = CGSize.zero
+                        self.scoreboardView.layer.shadowRadius = 2
                         self.view.layoutIfNeeded()
                     })
                 })
@@ -252,6 +259,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     func updateScoreBoard() {
             self.playerOneScorePts.text =  String (self.boardModel.playerOne.score)
             self.playerTwoScorePts.text =  String (self.boardModel.playerTwo.score)
+        
     }
     
     func updatePlayerNameText(){

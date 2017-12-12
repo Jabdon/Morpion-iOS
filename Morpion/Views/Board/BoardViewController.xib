@@ -30,6 +30,7 @@
                 <outlet property="scoreBoardPlayerTwoName" destination="lPN-KH-iqj" id="dJt-Hq-ToD"/>
                 <outlet property="scorePlayerOneView" destination="axF-Jr-fFk" id="fdY-vO-1Xk"/>
                 <outlet property="scorePlayerTwoView" destination="yXB-yk-mjj" id="NUj-TU-K0d"/>
+                <outlet property="scoreboardView" destination="ZLb-Tj-9DW" id="uXr-JR-3Nd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
