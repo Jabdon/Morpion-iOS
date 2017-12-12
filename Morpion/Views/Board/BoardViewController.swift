@@ -175,12 +175,47 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
         else{
             // then show it
+            
+            /*
             UIView.animate(withDuration: 0.35, animations: {
                 self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy
                 self.scoreBoardBackgroundView.alpha = 1
                 self.dismissOrShowButton.transform = self.dismissOrShowButton.transform.rotated(by: (180.0 * CGFloat(Double.pi)) / 180.0)
                 self.view.layoutIfNeeded()
             })
+            UIView.animate(withDuration: 0.20, animations: {
+                self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy - 50
+                self.view.layoutIfNeeded()
+            })
+            UIView.animate(withDuration: 0.20, animations: {
+                self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy
+                self.view.layoutIfNeeded()
+            })
+             */
+            
+            //
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
+                // put here the code you would like to animate
+                self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy - 10
+                self.scoreBoardBackgroundView.alpha = 1
+                self.dismissOrShowButton.transform = self.dismissOrShowButton.transform.rotated(by: (180.0 * CGFloat(Double.pi)) / 180.0)
+                self.view.layoutIfNeeded()
+                
+            }, completion: {(finished:Bool) in
+                // the code you put here will be compiled once the animation finishes
+                UIView.animate(withDuration: 0.06, animations: {
+                    self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy + 2
+                    self.view.layoutIfNeeded()
+                }, completion: {(finished:Bool) in
+                    // the code you put here will be compiled once the animation finishes
+                    UIView.animate(withDuration: 0.05, animations: {
+                        self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy
+                        self.view.layoutIfNeeded()
+                    })
+                })
+            })
+            
+            
             scoreBoardIsShown = true
         }
     }
