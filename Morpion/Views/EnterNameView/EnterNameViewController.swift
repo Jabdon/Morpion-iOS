@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JSSAlertView
 
 class EnterNameViewController: UIViewController, UITextFieldDelegate {
 

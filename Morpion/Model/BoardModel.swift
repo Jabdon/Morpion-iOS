@@ -16,6 +16,7 @@ class BoardModel: NSObject {
     var cellcount : Int
     
     var arrayOfUserDot: [User]
+    var winnerPlayer: User? = nil
     
     init(player1: User, player2: User, cellCount: Int){
         self.playerOne = player1
@@ -77,6 +78,7 @@ class BoardModel: NSObject {
                 if alignedPoints >= 5{
                     // yay current player wins
                     currentPlayer.userWins()
+                    winnerPlayer = currentPlayer
                     return true
                 }
             }
@@ -103,6 +105,7 @@ class BoardModel: NSObject {
                 if alignedPoints >= 5{
                     // yay current player wins
                     currentPlayer.userWins()
+                    winnerPlayer = currentPlayer
                     return true
                 }
             }
@@ -135,6 +138,7 @@ class BoardModel: NSObject {
                 if alignedPoints >= 5{
                     // yay current player wins
                     currentPlayer.userWins()
+                    winnerPlayer = currentPlayer
                     return true
                 }
             }
@@ -161,6 +165,7 @@ class BoardModel: NSObject {
                 if alignedPoints >= 5{
                     // yay current player wins
                     currentPlayer.userWins()
+                    winnerPlayer = currentPlayer
                     return true
                 }
             }
@@ -194,6 +199,7 @@ class BoardModel: NSObject {
                 if alignedPoints >= 5{
                     // yay current player wins
                     currentPlayer.userWins()
+                    winnerPlayer = currentPlayer
                     return true
                 }
             }
@@ -220,6 +226,7 @@ class BoardModel: NSObject {
                 if alignedPoints >= 5{
                     // yay current player wins
                     currentPlayer.userWins()
+                    winnerPlayer = currentPlayer
                     return true
                 }
             }
@@ -253,6 +260,7 @@ class BoardModel: NSObject {
                 if alignedPoints >= 5{
                     // yay current player wins
                     currentPlayer.userWins()
+                    winnerPlayer = currentPlayer
                     return true
                 }
             }
@@ -279,6 +287,7 @@ class BoardModel: NSObject {
                 if alignedPoints >= 5{
                     // yay current player wins
                     currentPlayer.userWins()
+                    winnerPlayer = currentPlayer
                     return true
                 }
             }
@@ -288,6 +297,9 @@ class BoardModel: NSObject {
             // something went wrong. Move was not registered. Should inform us (log it)
             return false
         }
+        
+        // change player
+        changeUserTurn()
         
         // enter code to check if user wins or not
         

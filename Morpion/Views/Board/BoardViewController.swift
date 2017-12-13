@@ -141,8 +141,9 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
             currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
             updateScoreBoard()
-            // win
-            let alert = UIAlertController(title: "We Got A Winner", message: "Congrats! \(boardModel.currentPlayer.name!)", preferredStyle: UIAlertControllerStyle.alert)
+            
+            // win alert
+            let alert = UIAlertController(title: "We Got A Winner", message: "Congrats! \(String(describing: boardModel.winnerPlayer?.name))", preferredStyle: UIAlertControllerStyle.alert)
             
             /*
              // testing add image in alertview
@@ -162,7 +163,6 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             
         }
         boardCollectionview.reloadItems(at: [indexPath])
-        boardModel.changeUserTurn()
         updatePlayerNameText()
         
     }
@@ -225,6 +225,8 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
                         self.scoreboardView.layer.shadowOpacity = 0.1
                         self.scoreboardView.layer.shadowOffset = CGSize.zero
                         self.scoreboardView.layer.shadowRadius = 2
+                        let generator = UIImpactFeedbackGenerator(style: .light)
+                        generator.impactOccurred()
                         self.view.layoutIfNeeded()
                     })
                 })
