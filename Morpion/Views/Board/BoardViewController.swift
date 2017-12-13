@@ -143,7 +143,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             updateScoreBoard()
             
             // win alert
-            let alert = UIAlertController(title: "We Got A Winner", message: "Congrats! \(String(describing: boardModel.winnerPlayer?.name))", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "We Got A Winner", message: "Congrats! \(boardModel.winnerPlayer?.name! ?? "No name")", preferredStyle: UIAlertControllerStyle.alert)
             
             /*
              // testing add image in alertview
