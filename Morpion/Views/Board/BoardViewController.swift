@@ -73,6 +73,10 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         collectionViewBoard?.register(nib, forCellWithReuseIdentifier: "squareDot")
         boardCollectionview.reloadData()
         
+        //register action
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tapTodismiss))
+        self.scoreBoardBackgroundView.addGestureRecognizer(gesture)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -161,6 +165,10 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         boardModel.changeUserTurn()
         updatePlayerNameText()
         
+    }
+    
+    @objc func tapTodismiss(){
+        self.showOrDismissScoreBoard()
     }
  
     @IBAction func showOrDismissScoreBoard() {
@@ -321,6 +329,8 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
         
     }
+    
+    
 
     /*
     // MARK: - Navigation

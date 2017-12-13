@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650D14827DD2AE027E2077D7 /* Pods_Morpion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92DF57AE2F76EE247582DB2 /* Pods_Morpion.framework */; };
 		EB02656B1FDC3EE8008E9ABC /* PlayerNameText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02656A1FDC3EE8008E9ABC /* PlayerNameText.swift */; };
 		EB6D4A9C1FA6222200BB1036 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */; };
 		EB6D4AA31FA6791300BB1036 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */; };
@@ -31,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29B2502209FECF894899CF10 /* Pods-Morpion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Morpion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Morpion/Pods-Morpion.release.xcconfig"; sourceTree = "<group>"; };
+		3A37F5A14CB41A1244953E69 /* Pods-Morpion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Morpion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Morpion/Pods-Morpion.debug.xcconfig"; sourceTree = "<group>"; };
+		B92DF57AE2F76EE247582DB2 /* Pods_Morpion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Morpion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB02656A1FDC3EE8008E9ABC /* PlayerNameText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameText.swift; sourceTree = "<group>"; };
 		EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -61,12 +65,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650D14827DD2AE027E2077D7 /* Pods_Morpion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E901F51BA8266E0A162939BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B92DF57AE2F76EE247582DB2 /* Pods_Morpion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB6D4A9D1FA676B600BB1036 /* TextFieldView */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +149,8 @@
 			children = (
 				EBC47A081FA54DAF00AC96AE /* Morpion */,
 				EBC47A071FA54DAF00AC96AE /* Products */,
+				ED31112A8340CE29FE69D8EC /* Pods */,
+				E901F51BA8266E0A162939BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,6 +207,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		ED31112A8340CE29FE69D8EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A37F5A14CB41A1244953E69 /* Pods-Morpion.debug.xcconfig */,
+				29B2502209FECF894899CF10 /* Pods-Morpion.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,9 +223,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC47A181FA54DAF00AC96AE /* Build configuration list for PBXNativeTarget "Morpion" */;
 			buildPhases = (
+				8846D2C3641DD277CFE87B14 /* [CP] Check Pods Manifest.lock */,
 				EBC47A021FA54DAF00AC96AE /* Sources */,
 				EBC47A031FA54DAF00AC96AE /* Frameworks */,
 				EBC47A041FA54DAF00AC96AE /* Resources */,
+				FAF23B1E88C660331171D62F /* [CP] Embed Pods Frameworks */,
+				282836297EDC43B85CDF3B90 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +289,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		282836297EDC43B85CDF3B90 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Morpion/Pods-Morpion-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8846D2C3641DD277CFE87B14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Morpion-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAF23B1E88C660331171D62F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Morpion/Pods-Morpion-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JSSAlertView/JSSAlertView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSSAlertView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Morpion/Pods-Morpion-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBC47A021FA54DAF00AC96AE /* Sources */ = {
@@ -408,6 +489,7 @@
 		};
 		EBC47A191FA54DAF00AC96AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A37F5A14CB41A1244953E69 /* Pods-Morpion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -423,6 +505,7 @@
 		};
 		EBC47A1A1FA54DAF00AC96AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29B2502209FECF894899CF10 /* Pods-Morpion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
