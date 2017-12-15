@@ -242,6 +242,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyc-xy-4Od">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="107"/>
                                             <state key="normal" image="startOver"/>
+                                            <connections>
+                                                <action selector="restartGame" destination="-1" eventType="touchUpInside" id="hDg-CX-Mkf"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

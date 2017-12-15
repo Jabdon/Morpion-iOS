@@ -49,9 +49,20 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
             
         }
         else{
+            let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+            let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
+            JSSAlertView().show(
+                self,
+                title: "Oops!",
+                text: "Name cannot be empty.",
+                buttonText: "Got It!",
+                color: customColor,
+                iconImage: customIcon)
+            
+            /*
             let alert = UIAlertController(title: "Oops", message: "Name cannot be empty", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil) */
         }
        
     }

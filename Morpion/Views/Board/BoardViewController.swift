@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JSSAlertView
 
 class BoardViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -44,6 +45,13 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var playerTwoNameContainer: UIView!
     @IBOutlet weak var dismissOrShowButton: UIButton!
     @IBOutlet weak var scoreboardView: UIView!
+    
+    @IBAction func restartGame() {
+        self.boardModel.refreshArray()
+        self.boardCollectionview.reloadData()
+        
+    }
+    
     
     
     init(playerOne: User, playerTwo: User) {
@@ -143,7 +151,15 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             updateScoreBoard()
             
             // win alert
-            let alert = UIAlertController(title: "We Got A Winner", message: "Congrats! \(boardModel.winnerPlayer?.name! ?? "No name")", preferredStyle: UIAlertControllerStyle.alert)
+            let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+            let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
+            JSSAlertView().show(
+                self,
+                title: "We Got a Winner!",
+                text: "Yay! \(boardModel.winnerPlayer?.name! ?? "No name") won this round. One more round?",
+                buttonText: "Ok!",
+                color: customColor,
+                iconImage: customIcon)
             
             /*
              // testing add image in alertview
@@ -152,9 +168,6 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             imgViewTitle.image = imgTitle
             alert.view.addSubview(imgViewTitle)
              */
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
         }
         else{
             let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell

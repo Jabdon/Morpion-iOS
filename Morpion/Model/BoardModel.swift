@@ -246,10 +246,11 @@ class BoardModel: NSObject {
                 
                 if (nextCellAt >= 0 && nextCellAt <= cellcount-1 ) && (arrayOfUserDot[nextCellAt].playerType == currentPlayer.playerType) {
                     alignedPoints += 1
+                    /*
                     if didHitACorner(index: nextCellAt){ // check if hit right corner
                         // stop checking on the left side immediatelly
                         checkLeftSide = true
-                    }
+                    } */
                     nextCellAt -= Int(Constant.numberOfColumn)
                 }
                 else{
@@ -273,10 +274,11 @@ class BoardModel: NSObject {
                 
                 if (nextCellAt >= 0 && nextCellAt <= cellcount-1 ) && (arrayOfUserDot[nextCellAt].playerType == currentPlayer.playerType) {
                     alignedPoints += 1
+                    /*
                     if didHitACorner(index: nextCellAt){ // check if hit right corner
                         // stop checking on the Right side immediatelly
                         checkRightSide = true
-                    }
+                    } */
                     nextCellAt += Int(Constant.numberOfColumn)
                 }
                 else{
@@ -341,6 +343,11 @@ class BoardModel: NSObject {
         else{
             return false
         }
+    }
+    
+    func refreshArray(){
+        self.arrayOfUserDot.removeAll()
+        self.arrayOfUserDot = Array(repeatElement(User(player: .none), count: cellcount))
     }
 
 }
