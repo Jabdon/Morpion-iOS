@@ -58,11 +58,9 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
                 buttonText: "Got It!",
                 color: customColor,
                 iconImage: customIcon)
-            
-            /*
-            let alert = UIAlertController(title: "Oops", message: "Name cannot be empty", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil) */
+         
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
         }
        
     }

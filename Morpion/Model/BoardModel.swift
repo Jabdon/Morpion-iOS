@@ -348,6 +348,7 @@ class BoardModel: NSObject {
     func refreshArray(){
         self.arrayOfUserDot.removeAll()
         self.arrayOfUserDot = Array(repeatElement(User(player: .none), count: cellcount))
+        self.winnerPlayer = nil
     }
 
 }

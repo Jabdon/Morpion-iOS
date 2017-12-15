@@ -48,11 +48,10 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     @IBAction func restartGame() {
         
-        
         //show alert
         let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
         let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
-        var alertview = JSSAlertView().show(
+        let alertview = JSSAlertView().show(
             self,
             title: "One More!",
             text: "Are You Sure You Want To Restart The Game?",
@@ -60,6 +59,10 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             cancelButtonText: "Nope",
             color: customColor,
             iconImage: customIcon)
+        //Make phone vibrate
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+        
         alertview.addAction {
             self.boardModel.refreshArray()
             self.boardCollectionview.reloadData()
@@ -160,40 +163,49 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if boardModel.didUserWin(indexPath: indexPath){
-            // user wins code
-            let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
-            currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
-            updateScoreBoard()
+        // if there's already a winner let user(s) know that they need to restart the game
+        if boardModel.winnerPlayer == nil {
+            if boardModel.didUserWin(indexPath: indexPath){
+                // user wins code
+                let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
+                currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
+                updateScoreBoard()
+                
+                // win alert
+                let customIcon:UIImage = UIImage(named:"trophy_Image")! // your custom icon UIImage
+                let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
+                JSSAlertView().show(
+                    self,
+                    title: "We Got a Winner!",
+                    text: "Yay! \(boardModel.winnerPlayer?.name! ?? "No name") won this round. One more round?",
+                    buttonText: "Ok!",
+                    color: customColor,
+                    iconImage: customIcon)
+            }
+            else{
+                let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
+                currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
+                
+                
+            }
+            boardCollectionview.reloadItems(at: [indexPath])
+            updatePlayerNameText()
             
-            // win alert
-            let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+        }
+        
+        else{
+            // show an alert
+            let customIcon:UIImage = UIImage(named:"trophy_Image")! // your custom icon UIImage
             let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
             JSSAlertView().show(
                 self,
                 title: "We Got a Winner!",
-                text: "Yay! \(boardModel.winnerPlayer?.name! ?? "No name") won this round. One more round?",
-                buttonText: "Ok!",
+                text: "\(boardModel.winnerPlayer?.name! ?? "No name") already won this round. You Can Start Another Round ",
+                buttonText: "Got It!",
                 color: customColor,
                 iconImage: customIcon)
-            
-            /*
-             // testing add image in alertview
-            let imgTitle = UIImage(named:"dot")
-            let imgViewTitle = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
-            imgViewTitle.image = imgTitle
-            alert.view.addSubview(imgViewTitle)
-             */
         }
-        else{
-            let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
-            currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
-            
-            
-        }
-        boardCollectionview.reloadItems(at: [indexPath])
-        updatePlayerNameText()
-        
+
     }
     
     @objc func tapTodismiss(){
@@ -215,25 +227,6 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
         else{
             // then show it
-            
-            /*
-            UIView.animate(withDuration: 0.35, animations: {
-                self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy
-                self.scoreBoardBackgroundView.alpha = 1
-                self.dismissOrShowButton.transform = self.dismissOrShowButton.transform.rotated(by: (180.0 * CGFloat(Double.pi)) / 180.0)
-                self.view.layoutIfNeeded()
-            })
-            UIView.animate(withDuration: 0.20, animations: {
-                self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy - 50
-                self.view.layoutIfNeeded()
-            })
-            UIView.animate(withDuration: 0.20, animations: {
-                self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy
-                self.view.layoutIfNeeded()
-            })
-             */
-            
-            //
             UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
                 // put here the code you would like to animate
                 self.scoreBoardBottomConstraint.constant =  self.constantToDismissScoreboardBy - 10
@@ -254,8 +247,12 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
                         self.scoreboardView.layer.shadowOpacity = 0.1
                         self.scoreboardView.layer.shadowOffset = CGSize.zero
                         self.scoreboardView.layer.shadowRadius = 2
+                        
+                        //make phone vibrate
                         let generator = UIImpactFeedbackGenerator(style: .light)
                         generator.impactOccurred()
+                        
+                        //conventional
                         self.view.layoutIfNeeded()
                     })
                 })
