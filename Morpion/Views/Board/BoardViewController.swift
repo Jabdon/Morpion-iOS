@@ -47,8 +47,24 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var scoreboardView: UIView!
     
     @IBAction func restartGame() {
-        self.boardModel.refreshArray()
-        self.boardCollectionview.reloadData()
+        
+        
+        //show alert
+        let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+        let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
+        var alertview = JSSAlertView().show(
+            self,
+            title: "One More!",
+            text: "Are You Sure You Want To Restart The Game?",
+            buttonText: "Yep!",
+            cancelButtonText: "Nope",
+            color: customColor,
+            iconImage: customIcon)
+        alertview.addAction {
+            self.boardModel.refreshArray()
+            self.boardCollectionview.reloadData()
+            self.showOrDismissScoreBoard()
+        }
         
     }
     
