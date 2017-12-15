@@ -53,10 +53,10 @@
                     <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7f0-Eb-MGs" userLabel="PlayerTwoNameContainer">
-                            <rect key="frame" x="275.5" y="14" width="40" height="20.5"/>
+                            <rect key="frame" x="275.5" y="12" width="40" height="24.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZq-fO-gum" customClass="PlayerNameText" customModule="Morpion" customModuleProvider="target">
-                                    <rect key="frame" x="4" y="0.0" width="32" height="20.5"/>
+                                    <rect key="frame" x="4" y="2" width="32" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -64,17 +64,17 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="lZq-fO-gum" secondAttribute="bottom" id="JeI-XD-pNU"/>
+                                <constraint firstAttribute="bottom" secondItem="lZq-fO-gum" secondAttribute="bottom" constant="2" id="JeI-XD-pNU"/>
                                 <constraint firstAttribute="trailing" secondItem="lZq-fO-gum" secondAttribute="trailing" constant="4" id="Nzi-Uq-bvW"/>
                                 <constraint firstItem="lZq-fO-gum" firstAttribute="leading" secondItem="7f0-Eb-MGs" secondAttribute="leading" constant="4" id="THs-mH-mmn"/>
-                                <constraint firstItem="lZq-fO-gum" firstAttribute="top" secondItem="7f0-Eb-MGs" secondAttribute="top" id="eaf-QI-3pf"/>
+                                <constraint firstItem="lZq-fO-gum" firstAttribute="top" secondItem="7f0-Eb-MGs" secondAttribute="top" constant="2" id="eaf-QI-3pf"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hc-o7-ahd" userLabel="PlayerOneNameContainer">
-                            <rect key="frame" x="25" y="14" width="74" height="20"/>
+                            <rect key="frame" x="25" y="12.5" width="74" height="24"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="jonathan" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsN-ZJ-hm4" customClass="PlayerNameText" customModule="Morpion" customModuleProvider="target">
-                                    <rect key="frame" x="4" y="0.0" width="66" height="20"/>
+                                    <rect key="frame" x="4" y="2" width="66" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -84,8 +84,8 @@
                             <constraints>
                                 <constraint firstItem="FsN-ZJ-hm4" firstAttribute="leading" secondItem="1Hc-o7-ahd" secondAttribute="leading" constant="4" id="75j-9i-H8d"/>
                                 <constraint firstAttribute="trailing" secondItem="FsN-ZJ-hm4" secondAttribute="trailing" constant="4" id="HdJ-yL-sB3"/>
-                                <constraint firstAttribute="bottom" secondItem="FsN-ZJ-hm4" secondAttribute="bottom" id="K3j-io-5Yd"/>
-                                <constraint firstItem="FsN-ZJ-hm4" firstAttribute="top" secondItem="1Hc-o7-ahd" secondAttribute="top" id="ssG-BM-gKf"/>
+                                <constraint firstAttribute="bottom" secondItem="FsN-ZJ-hm4" secondAttribute="bottom" constant="2" id="K3j-io-5Yd"/>
+                                <constraint firstItem="FsN-ZJ-hm4" firstAttribute="top" secondItem="1Hc-o7-ahd" secondAttribute="top" constant="2" id="ssG-BM-gKf"/>
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="zzB-Vj-Zbx">
@@ -118,8 +118,8 @@
                         <constraint firstItem="VhO-HX-kKb" firstAttribute="centerX" secondItem="2fq-fh-ZgM" secondAttribute="centerX" id="TAU-JY-NJB"/>
                         <constraint firstItem="ee9-Au-OKm" firstAttribute="leading" secondItem="1Hc-o7-ahd" secondAttribute="trailing" constant="5" id="jGF-CX-FZY"/>
                         <constraint firstItem="VhO-HX-kKb" firstAttribute="leading" secondItem="ee9-Au-OKm" secondAttribute="trailing" constant="46" id="owt-JJ-RQb"/>
-                        <constraint firstAttribute="bottom" secondItem="1Hc-o7-ahd" secondAttribute="bottom" constant="32" id="qhi-05-fDR"/>
-                        <constraint firstAttribute="bottom" secondItem="7f0-Eb-MGs" secondAttribute="bottom" constant="32" id="tj8-ac-COY"/>
+                        <constraint firstAttribute="bottom" secondItem="1Hc-o7-ahd" secondAttribute="bottom" constant="30" id="qhi-05-fDR"/>
+                        <constraint firstAttribute="bottom" secondItem="7f0-Eb-MGs" secondAttribute="bottom" constant="30" id="tj8-ac-COY"/>
                         <constraint firstAttribute="bottom" secondItem="VhO-HX-kKb" secondAttribute="bottom" constant="29" id="vwQ-De-HdQ"/>
                     </constraints>
                 </view>
