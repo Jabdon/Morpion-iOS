@@ -164,7 +164,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // if there's already a winner let user(s) know that they need to restart the game
-        if boardModel.winnerPlayer == nil {
+        if boardModel.winInfo.winnerPlayer == nil {
             if boardModel.didUserWin(indexPath: indexPath){
                 // user wins code
                 let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
@@ -177,7 +177,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
                 JSSAlertView().show(
                     self,
                     title: "We Got a Winner!",
-                    text: "Yay! \(boardModel.winnerPlayer?.name! ?? "No name") won this round. One more round?",
+                    text: "Yay! \(boardModel.winInfo.winnerPlayer?.name! ?? "No name") won this round. One more round?",
                     buttonText: "Ok!",
                     color: customColor,
                     iconImage: customIcon)
@@ -200,7 +200,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             JSSAlertView().show(
                 self,
                 title: "We Got a Winner!",
-                text: "\(boardModel.winnerPlayer?.name! ?? "No name") already won this round. You Can Start Another Round ",
+                text: "\(boardModel.winInfo.winnerPlayer?.name! ?? "No name") already won this round. You Can Start Another Round ",
                 buttonText: "Got It!",
                 color: customColor,
                 iconImage: customIcon)

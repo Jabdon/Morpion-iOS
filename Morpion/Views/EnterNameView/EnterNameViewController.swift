@@ -49,7 +49,7 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
             
         }
         else{
-            let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+            let customIcon:UIImage = UIImage(named:"header_Image")! // your custom icon UIImage
             let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
             JSSAlertView().show(
                 self,
