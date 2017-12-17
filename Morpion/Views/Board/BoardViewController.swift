@@ -64,9 +64,11 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         generator.impactOccurred()
         
         alertview.addAction {
+            self.removeLines(info: self.boardModel.winInfo)
             self.boardModel.refreshArray()
             self.boardCollectionview.reloadData()
             self.showOrDismissScoreBoard()
+            
         }
         
     }
@@ -170,7 +172,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
                 let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
                 currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
                 updateScoreBoard()
-                
+                drawlines(info: boardModel.winInfo)
                 // win alert
                 let customIcon:UIImage = UIImage(named:"trophy_Image")! // your custom icon UIImage
                 let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
@@ -188,7 +190,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
                 
                 
             }
-            boardCollectionview.reloadItems(at: [indexPath])
+            //boardCollectionview.reloadItems(at: [indexPath])
             updatePlayerNameText()
             
         }
@@ -215,6 +217,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBAction func showOrDismissScoreBoard() {
         if scoreBoardIsShown{
             //dismiss it
+            self.view.layoutIfNeeded()
             UIView.animate(withDuration: 0.25, animations: {
                 self.scoreBoardBottomConstraint.constant =  self.constantToMoveUpScoreboardBy
                 self.scoreBoardBackgroundView.alpha = 0
@@ -355,9 +358,26 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         for label in labels{
             label.textColor = UIColor.lightGray
         }
-        
     }
     
+    func drawlines(info: winningInfo){
+        for i in info.pointsAligned{
+            let index: IndexPath = IndexPath.init(row: i, section: 0)
+            let square = boardCollectionview.cellForItem(at: index) as! SquareDotCell
+            square.drawline(line: info.lineSegment)
+            print(square.description) 
+        }
+    }
+    
+    func removeLines( info: winningInfo){
+        for i in info.pointsAligned{
+            let index: IndexPath = IndexPath.init(row: i, section: 0)
+            let cell = boardCollectionview.cellForItem(at: index) as! SquareDotCell
+            cell.layer.sublayers?.remove(at: 1)
+            //cell.layer.sublayers = nil
+            print(cell.description)
+        }
+    }
     
 
     /*

@@ -13,6 +13,8 @@ class SquareDotCell: UICollectionViewCell {
     //Userobject when square is taken by a user
     @IBOutlet weak var squareDotSymbol: UIImageView!
     
+
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,4 +49,103 @@ class SquareDotCell: UICollectionViewCell {
         aPath.fill()
     }
  */
+    func drawline( line: lineSegment){
+        
+        switch line {
+        case .horizontal:
+            let startingY: CGFloat = self.bounds.origin.y + (self.frame.height/2)
+            let startingX: CGFloat = self.bounds.origin.x + 0
+            let endingY: CGFloat = startingY
+            let endingX: CGFloat = self.bounds.origin.x + self.frame.width
+            
+            let aPath = UIBezierPath()
+            let lineCaShapeLayer = CAShapeLayer()
+            
+            aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
+            aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
+            aPath.lineWidth = 2.0
+            lineCaShapeLayer.path = aPath.cgPath
+            lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
+            lineCaShapeLayer.lineWidth = 5.0
+            self.layer.addSublayer(lineCaShapeLayer);
+            
+            
+        case .vertical:
+            let startingY: CGFloat = self.bounds.origin.y + 0
+            let startingX: CGFloat = self.bounds.origin.x + (self.frame.width/2)
+            let endingY: CGFloat = self.bounds.origin.y + (self.frame.height)
+            let endingX: CGFloat = startingX
+            
+            let aPath = UIBezierPath()
+            let lineCaShapeLayer = CAShapeLayer()
+            
+            aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
+            aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
+            aPath.lineWidth = 2.0
+            lineCaShapeLayer.path = aPath.cgPath
+            lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
+            lineCaShapeLayer.lineWidth = 5.0
+            self.layer.addSublayer(lineCaShapeLayer);
+            
+        case .diagonalUpward:
+            let startingY: CGFloat = self.bounds.origin.y + self.frame.height
+            let startingX: CGFloat = self.bounds.origin.x + 0
+            let endingY: CGFloat = self.bounds.origin.y + 0
+            let endingX: CGFloat = self.bounds.origin.x + self.frame.width
+            
+            let aPath = UIBezierPath()
+            let lineCaShapeLayer = CAShapeLayer()
+            
+            aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
+            aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
+            aPath.lineWidth = 2.0
+            lineCaShapeLayer.path = aPath.cgPath
+            lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
+            lineCaShapeLayer.lineWidth = 5.0
+            self.layer.addSublayer(lineCaShapeLayer);
+            
+        case .diagonalDownward:
+            let startingY: CGFloat = self.bounds.origin.y + 0
+            let startingX: CGFloat = self.bounds.origin.x + 0
+            let endingY: CGFloat = self.bounds.origin.y + self.frame.height
+            let endingX: CGFloat = self.bounds.origin.x + self.frame.width
+            
+            let aPath = UIBezierPath()
+            let lineCaShapeLayer = CAShapeLayer()
+            
+            aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
+            aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
+            aPath.lineWidth = 2.0
+            lineCaShapeLayer.path = aPath.cgPath
+            lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
+            lineCaShapeLayer.lineWidth = 5.0
+            self.layer.addSublayer(lineCaShapeLayer);
+            
+        case .none: break
+            
+        }
+        
+        
+        /*
+        let xCoord: CGFloat = 10.0
+        let yCoord: CGFloat = 20.0
+        let radius: CGFloat = 8.0
+        
+        let dotPath = UIBezierPath.init(ovalIn: CGRect.init(x: xCoord, y: yCoord, width: radius, height: radius))
+        
+        let layer = CAShapeLayer()
+        layer.path = dotPath.cgPath
+        layer.strokeColor = UIColor.blue.cgColor
+        
+        self.layer.addSublayer(layer) */
+
+    }
+}
+
+enum lineSegment {
+    case horizontal
+    case vertical
+    case diagonalUpward
+    case diagonalDownward
+    case none
 }

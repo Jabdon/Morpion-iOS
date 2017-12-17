@@ -76,10 +76,10 @@ class BoardModel: NSObject {
                     checkLeftSide = true
                 }
                 // check if alignedPoints reach 5
-                if pointsAligned.count >= 6 {
+                if pointsAligned.count >= 5 {
                     // yay current player wins
                     currentPlayer.userWins()
-                    winInfo.lineSegment = 1
+                    winInfo.lineSegment = .diagonalDownward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
                     return true
@@ -90,6 +90,7 @@ class BoardModel: NSObject {
              While loop below is checking for Right side
              */
             nextCellAt = currentCellAt
+            nextCellAt += (Int(Constant.numberOfColumn) + 1)
             while !checkRightSide{
                 
                 if (nextCellAt >= 0 && nextCellAt <= cellcount-1 ) && (arrayOfUserDot[nextCellAt].playerType == currentPlayer.playerType) {
@@ -105,10 +106,10 @@ class BoardModel: NSObject {
                     checkRightSide = true
                 }
                 // check if alignedPoints reach 5
-                if pointsAligned.count >= 6 {
+                if pointsAligned.count >= 5 {
                     // yay current player wins
                     currentPlayer.userWins()
-                    winInfo.lineSegment = 2
+                    winInfo.lineSegment = .diagonalDownward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
                     return true
@@ -140,10 +141,10 @@ class BoardModel: NSObject {
                     checkLeftSide = true
                 }
                 // check if alignedPoints reach 5
-                if pointsAligned.count >= 6 {
+                if pointsAligned.count >= 5 {
                     // yay current player wins
                     currentPlayer.userWins()
-                    winInfo.lineSegment = 3
+                    winInfo.lineSegment = .diagonalUpward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
                     return true
@@ -154,6 +155,7 @@ class BoardModel: NSObject {
              While loop below is checking for Right side
              */
             nextCellAt = currentCellAt
+            nextCellAt -= (Int(Constant.numberOfColumn) - 1)
             while !checkRightSide{
                 
                 if (nextCellAt >= 0 && nextCellAt <= cellcount-1 ) && (arrayOfUserDot[nextCellAt].playerType == currentPlayer.playerType) {
@@ -169,10 +171,10 @@ class BoardModel: NSObject {
                     checkRightSide = true
                 }
                 // check if alignedPoints reach 5
-                if pointsAligned.count >= 6{
+                if pointsAligned.count >= 5 {
                     // yay current player wins
                     currentPlayer.userWins()
-                    winInfo.lineSegment = 4
+                    winInfo.lineSegment = .diagonalUpward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
                     return true
@@ -205,10 +207,10 @@ class BoardModel: NSObject {
                     checkLeftSide = true
                 }
                 // check if alignedPoints reach 5
-                if pointsAligned.count >= 6 {
+                if pointsAligned.count >= 5 {
                     // yay current player wins
                     currentPlayer.userWins()
-                    winInfo.lineSegment = 5
+                    winInfo.lineSegment = .horizontal
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
                     return true
@@ -219,6 +221,7 @@ class BoardModel: NSObject {
              While loop below is checking for Right side
              */
             nextCellAt = currentCellAt
+            nextCellAt += 1
             while !checkRightSide{
                 
                 if (nextCellAt >= 0 && nextCellAt <= cellcount-1 ) && (arrayOfUserDot[nextCellAt].playerType == currentPlayer.playerType) {
@@ -234,10 +237,10 @@ class BoardModel: NSObject {
                     checkRightSide = true
                 }
                 // check if alignedPoints reach 5
-                if pointsAligned.count >= 6{
+                if pointsAligned.count >= 5 {
                     // yay current player wins
                     currentPlayer.userWins()
-                    winInfo.lineSegment = 6
+                    winInfo.lineSegment = .horizontal
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
                     return true
@@ -271,10 +274,10 @@ class BoardModel: NSObject {
                     checkLeftSide = true
                 }
                 // check if alignedPoints reach 5
-                if pointsAligned.count >= 6 {
+                if pointsAligned.count >= 5 {
                     // yay current player wins
                     currentPlayer.userWins()
-                    winInfo.lineSegment = 7
+                    winInfo.lineSegment = .vertical
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
                     return true
@@ -285,6 +288,8 @@ class BoardModel: NSObject {
              While loop below is checking for Right side
              */
             nextCellAt = currentCellAt
+            nextCellAt += Int(Constant.numberOfColumn)
+            
             while !checkRightSide{
                 
                 if (nextCellAt >= 0 && nextCellAt <= cellcount-1 ) && (arrayOfUserDot[nextCellAt].playerType == currentPlayer.playerType) {
@@ -301,10 +306,10 @@ class BoardModel: NSObject {
                     checkRightSide = true
                 }
                 // check if alignedPoints reach 5
-                if pointsAligned.count >= 6 {
+                if pointsAligned.count >= 5 {
                     // yay current player wins
                     currentPlayer.userWins()
-                    winInfo.lineSegment = 8
+                    winInfo.lineSegment = .vertical
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
                     return true
@@ -371,12 +376,12 @@ class BoardModel: NSObject {
 }
 
 struct winningInfo{
-    var lineSegment: Int  = 0
+    var lineSegment: lineSegment = .none
     var winnerPlayer: User? = nil
     var pointsAligned: [Int] = [];
     
     mutating func resetWinningInfo(){
-        lineSegment = 0
+        lineSegment = .none
         winnerPlayer = nil
         pointsAligned.removeAll()
     }
