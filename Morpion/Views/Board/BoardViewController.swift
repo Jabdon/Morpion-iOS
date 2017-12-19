@@ -73,6 +73,47 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         
     }
     
+    @IBAction func undoGame() {
+        //show alert
+        if (self.boardModel.winInfo.winnerPlayer == nil){
+            let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+            let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
+            let alertview = JSSAlertView().show(
+                self,
+                title: "Back In Time",
+                text: "Are You Sure You Want To Undo The Latest Move?",
+                buttonText: "Yep!",
+                cancelButtonText: "Nope",
+                color: customColor,
+                iconImage: customIcon)
+            //Make phone vibrate
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+            
+            alertview.addAction {
+                    self.boardModel.undoPlay()
+                    self.updatePlayerNameText()
+                    self.boardCollectionview.reloadData()
+                    self.showOrDismissScoreBoard()
+                
+                
+            }
+        }
+        else{
+            let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+            let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
+            JSSAlertView().show(
+                self,
+                title: "Back In Time",
+                text: "Sorry, Cannot Undo. There is Already A Winner",
+                buttonText: "Got It!",
+                color: customColor,
+                iconImage: customIcon)
+            
+        }
+        
+    }
+    
     
     
     init(playerOne: User, playerTwo: User) {

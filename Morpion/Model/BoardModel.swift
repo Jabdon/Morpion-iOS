@@ -17,6 +17,7 @@ class BoardModel: NSObject {
     
     var arrayOfUserDot: [User]
     var winInfo = winningInfo()
+    var lastPlayedPointIndex: Int = -1
     
     
     init(player1: User, player2: User, cellCount: Int){
@@ -321,7 +322,8 @@ class BoardModel: NSObject {
             // something went wrong. Move was not registered. Should inform us (log it)
             return false
         }
-        
+        //set latest move
+        lastPlayedPointIndex = indexPath.row
         // change player
         changeUserTurn()
         
@@ -369,8 +371,18 @@ class BoardModel: NSObject {
     
     func refreshArray(){
         self.arrayOfUserDot.removeAll()
+        lastPlayedPointIndex = -1
         self.arrayOfUserDot = Array(repeatElement(User(player: .none), count: cellcount))
         winInfo.resetWinningInfo()
+    }
+    
+    
+    func undoPlay(){
+        if(lastPlayedPointIndex >= 0 && winInfo.winnerPlayer == nil){
+           arrayOfUserDot[lastPlayedPointIndex] = User(player: .none)
+            lastPlayedPointIndex = -1
+            changeUserTurn()
+        }
     }
 
 }
