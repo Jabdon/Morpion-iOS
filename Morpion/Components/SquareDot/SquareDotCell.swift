@@ -124,20 +124,6 @@ class SquareDotCell: UICollectionViewCell {
         case .none: break
             
         }
-        
-        
-        /*
-        let xCoord: CGFloat = 10.0
-        let yCoord: CGFloat = 20.0
-        let radius: CGFloat = 8.0
-        
-        let dotPath = UIBezierPath.init(ovalIn: CGRect.init(x: xCoord, y: yCoord, width: radius, height: radius))
-        
-        let layer = CAShapeLayer()
-        layer.path = dotPath.cgPath
-        layer.strokeColor = UIColor.blue.cgColor
-        
-        self.layer.addSublayer(layer) */
 
     }
 }

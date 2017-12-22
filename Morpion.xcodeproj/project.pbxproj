@@ -29,6 +29,7 @@
 		EBC47A231FA55AC900AC96AE /* EnterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC47A211FA55AC900AC96AE /* EnterNameViewController.swift */; };
 		EBC47A241FA55AC900AC96AE /* EnterNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC47A221FA55AC900AC96AE /* EnterNameViewController.xib */; };
 		EBC47A281FA60CD900AC96AE /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC47A271FA60CD900AC96AE /* RoundButton.swift */; };
+		EBF23F7E1FED641E00980FF4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF23F7D1FED641E00980FF4 /* Errors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		EBC47A211FA55AC900AC96AE /* EnterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameViewController.swift; sourceTree = "<group>"; };
 		EBC47A221FA55AC900AC96AE /* EnterNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterNameViewController.xib; sourceTree = "<group>"; };
 		EBC47A271FA60CD900AC96AE /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		EBF23F7D1FED641E00980FF4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */,
 				EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */,
 				EB02656A1FDC3EE8008E9ABC /* PlayerNameText.swift */,
+				EBF23F7D1FED641E00980FF4 /* Errors.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB6D4AA91FA7F8C600BB1036 /* ScreenTitleLabel.swift in Sources */,
+				EBF23F7E1FED641E00980FF4 /* Errors.swift in Sources */,
 				EB6D4AC81FABF59E00BB1036 /* BoardViewController.swift in Sources */,
 				EB6D4AB11FA8ABAB00BB1036 /* CustomAlertViewController.swift in Sources */,
 				EBC47A281FA60CD900AC96AE /* RoundButton.swift in Sources */,

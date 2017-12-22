@@ -64,7 +64,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         generator.impactOccurred()
         
         alertview.addAction {
-            self.removeLines(info: self.boardModel.winInfo)
+            self.removeLines()
             self.boardModel.refreshArray()
             self.boardCollectionview.reloadData()
             self.showOrDismissScoreBoard()
@@ -234,7 +234,15 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
                 let currentCell = boardCollectionview.cellForItem(at: indexPath) as! SquareDotCell
                 currentCell.loadData(user: boardModel.arrayOfUserDot[indexPath.row])
                 updateScoreBoard()
-                drawlines(info: boardModel.winInfo)
+               
+                do{
+                   try self.drawTheLine(info: boardModel.winInfo)
+                }
+                catch{
+                    print(error)
+                }
+                
+                /*drawlines(info: boardModel.winInfo)*/
                 // win alert
                 let customIcon:UIImage = UIImage(named:"trophy_Image")! // your custom icon UIImage
                 let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
@@ -431,13 +439,101 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
     }
     
-    func removeLines( info: winningInfo){
-        for i in info.pointsAligned{
-            let index: IndexPath = IndexPath.init(row: i, section: 0)
-            let cell = boardCollectionview.cellForItem(at: index) as! SquareDotCell
-            cell.layer.sublayers?.remove(at: 1)
-            //cell.layer.sublayers = nil
-            print(cell.description)
+    func removeLines(){
+        boardCollectionview.layer.sublayers?.removeLast()
+    }
+    
+    func drawTheLine(info: winningInfo) throws {
+        guard var beginningIndex = info.pointsAligned.first, var endingIndex = info.pointsAligned.last else{
+            throw GameError.alignedPointsIsNil
+        }
+        
+        if( beginningIndex > endingIndex){
+            let temp = beginningIndex
+            beginningIndex = endingIndex
+            endingIndex = temp
+        }
+        
+        let beginningIndexPath = IndexPath.init(row: beginningIndex, section: 0)
+        let EndingIndexPath = IndexPath.init(row: endingIndex, section: 0)
+        /*let beginningCell = boardCollectionview.cellForItem(at: beginningIndexPath)
+        let EndingCell = boardCollectionview.cellForItem(at: EndingIndexPath) */
+        guard let beginningCell = boardCollectionview.cellForItem(at: beginningIndexPath), let EndingCell = boardCollectionview.cellForItem(at: EndingIndexPath) else{
+            throw GameError.cellIsNil
+        }
+        
+        switch info.lineSegment {
+        case .horizontal:
+            let startingY: CGFloat = beginningCell.frame.origin.y + (beginningCell.frame.height/2)
+            let startingX: CGFloat = beginningCell.frame.origin.x + 0
+            let endingY: CGFloat = startingY
+            let endingX: CGFloat = EndingCell.frame.origin.x + EndingCell.frame.width
+            
+            let aPath = UIBezierPath()
+            let lineCaShapeLayer = CAShapeLayer()
+            
+            aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
+            aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
+            aPath.lineWidth = 2.0
+            lineCaShapeLayer.path = aPath.cgPath
+            lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
+            lineCaShapeLayer.lineWidth = 5.0
+            boardCollectionview.layer.addSublayer(lineCaShapeLayer);
+            
+            
+        case .vertical:
+            let startingY: CGFloat = beginningCell.frame.origin.y + 0
+            let startingX: CGFloat = beginningCell.frame.origin.x + (beginningCell.frame.width/2)
+            let endingY: CGFloat = EndingCell.frame.origin.y + (EndingCell.frame.height)
+            let endingX: CGFloat = startingX
+            
+            let aPath = UIBezierPath()
+            let lineCaShapeLayer = CAShapeLayer()
+            
+            aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
+            aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
+            aPath.lineWidth = 2.0
+            lineCaShapeLayer.path = aPath.cgPath
+            lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
+            lineCaShapeLayer.lineWidth = 5.0
+            boardCollectionview.layer.addSublayer(lineCaShapeLayer);
+            
+        case .diagonalUpward:
+            let startingY: CGFloat = beginningCell.frame.origin.y + 0
+            let startingX: CGFloat = beginningCell.frame.origin.x + beginningCell.frame.width
+            let endingY: CGFloat = EndingCell.frame.origin.y + EndingCell.frame.height
+            let endingX: CGFloat = EndingCell.frame.origin.x + 0
+            
+            let aPath = UIBezierPath()
+            let lineCaShapeLayer = CAShapeLayer()
+            
+            aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
+            aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
+            aPath.lineWidth = 2.0
+            lineCaShapeLayer.path = aPath.cgPath
+            lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
+            lineCaShapeLayer.lineWidth = 5.0
+            boardCollectionview.layer.addSublayer(lineCaShapeLayer);
+            
+        case .diagonalDownward:
+            let startingY: CGFloat = beginningCell.frame.origin.y + 0
+            let startingX: CGFloat = beginningCell.frame.origin.x + 0
+            let endingY: CGFloat = EndingCell.frame.origin.y + EndingCell.frame.height
+            let endingX: CGFloat = EndingCell.frame.origin.x + EndingCell.frame.width
+            
+            let aPath = UIBezierPath()
+            let lineCaShapeLayer = CAShapeLayer()
+            
+            aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
+            aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
+            aPath.lineWidth = 2.0
+            lineCaShapeLayer.path = aPath.cgPath
+            lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
+            lineCaShapeLayer.lineWidth = 5.0
+            boardCollectionview.layer.addSublayer(lineCaShapeLayer);
+            
+        case .none: break
+            
         }
     }
     
