@@ -37,6 +37,11 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.playerOneLabel.text = ""
+        self.playerTwoLabel.text = ""
+    }
+    
     @IBAction func startGame(_ sender: Any){
         
         if let playerOneName = playerOneLabel.text,let playerTwoName = playerTwoLabel.text, !playerOneName.isEmpty, !playerTwoName.isEmpty  {

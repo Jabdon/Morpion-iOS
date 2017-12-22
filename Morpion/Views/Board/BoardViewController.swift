@@ -73,6 +73,27 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         
     }
     
+    @IBAction func exitGame() {
+        let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+        let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
+        let alertview = JSSAlertView().show(
+            self,
+            title: "You Want Out?",
+            text: "Yep I Want To Exit",
+            buttonText: "Yep!",
+            cancelButtonText: "Nope",
+            color: customColor,
+            iconImage: customIcon)
+        //Make phone vibrate
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+        
+        alertview.addAction {
+            self.dismiss(animated: false, completion: nil)
+            
+        }
+        
+    }
     @IBAction func undoGame() {
         //show alert
         if (self.boardModel.winInfo.winnerPlayer == nil){

@@ -226,7 +226,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvS-zx-sPH">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="107"/>
-                                            <state key="normal" image="restart"/>
+                                            <state key="normal" image="Menu_Exit"/>
                                             <connections>
                                                 <action selector="undoGame" destination="-1" eventType="touchUpInside" id="GQ5-Up-dMP"/>
                                             </connections>
@@ -245,7 +245,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyc-xy-4Od">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="107"/>
-                                            <state key="normal" image="startOver"/>
+                                            <state key="normal" image="Menu_Exit"/>
                                             <connections>
                                                 <action selector="restartGame" destination="-1" eventType="touchUpInside" id="hDg-CX-Mkf"/>
                                             </connections>
@@ -264,7 +264,10 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7e-hf-p8o">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="107"/>
-                                            <state key="normal" image="undo"/>
+                                            <state key="normal" image="Menu_Exit"/>
+                                            <connections>
+                                                <action selector="exitGame" destination="-1" eventType="touchUpInside" id="9bJ-Zf-n9k"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -331,11 +334,9 @@
         </view>
     </objects>
     <resources>
+        <image name="Menu_Exit" width="50" height="50"/>
         <image name="arrowDown" width="16" height="16"/>
         <image name="circle" width="24" height="24"/>
         <image name="cross" width="24" height="24"/>
-        <image name="restart" width="32" height="32"/>
-        <image name="startOver" width="32" height="32"/>
-        <image name="undo" width="32" height="32"/>
     </resources>
 </document>
