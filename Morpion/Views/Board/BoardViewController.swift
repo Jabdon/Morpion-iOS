@@ -430,15 +430,6 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
     }
     
-    func drawlines(info: winningInfo){
-        for i in info.pointsAligned{
-            let index: IndexPath = IndexPath.init(row: i, section: 0)
-            let square = boardCollectionview.cellForItem(at: index) as! SquareDotCell
-            square.drawline(line: info.lineSegment)
-            print(square.description) 
-        }
-    }
-    
     func removeLines(){
         boardCollectionview.layer.sublayers?.removeLast()
     }
@@ -471,13 +462,13 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let aPath = UIBezierPath()
             let lineCaShapeLayer = CAShapeLayer()
-            
             aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
             aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
-            aPath.lineWidth = 2.0
+            aPath.close()
             lineCaShapeLayer.path = aPath.cgPath
             lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
-            lineCaShapeLayer.lineWidth = 5.0
+            lineCaShapeLayer.lineJoin = "round"
+            lineCaShapeLayer.lineWidth = 8.0
             boardCollectionview.layer.addSublayer(lineCaShapeLayer);
             
             
@@ -489,13 +480,13 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let aPath = UIBezierPath()
             let lineCaShapeLayer = CAShapeLayer()
-            
             aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
             aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
-            aPath.lineWidth = 2.0
+            aPath.close()
             lineCaShapeLayer.path = aPath.cgPath
             lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
-            lineCaShapeLayer.lineWidth = 5.0
+            lineCaShapeLayer.lineJoin = "round"
+            lineCaShapeLayer.lineWidth = 8.0
             boardCollectionview.layer.addSublayer(lineCaShapeLayer);
             
         case .diagonalUpward:
@@ -506,13 +497,13 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let aPath = UIBezierPath()
             let lineCaShapeLayer = CAShapeLayer()
-            
             aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
             aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
-            aPath.lineWidth = 2.0
+            aPath.close()
             lineCaShapeLayer.path = aPath.cgPath
             lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
-            lineCaShapeLayer.lineWidth = 5.0
+            lineCaShapeLayer.lineJoin = "round"
+            lineCaShapeLayer.lineWidth = 8.0
             boardCollectionview.layer.addSublayer(lineCaShapeLayer);
             
         case .diagonalDownward:
@@ -523,13 +514,14 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let aPath = UIBezierPath()
             let lineCaShapeLayer = CAShapeLayer()
-            
             aPath.move(to: CGPoint(x: startingX/*Put starting Location*/, y:startingY /*Put starting Location*/))
             aPath.addLine(to: CGPoint(x: endingX/*Put Next Location*/, y: endingY/*Put Next Location*/))
-            aPath.lineWidth = 2.0
+            aPath.close()
             lineCaShapeLayer.path = aPath.cgPath
             lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
-            lineCaShapeLayer.lineWidth = 5.0
+            lineCaShapeLayer.lineJoin = "round"
+            lineCaShapeLayer.lineWidth = 8.0
+            
             boardCollectionview.layer.addSublayer(lineCaShapeLayer);
             
         case .none: break
