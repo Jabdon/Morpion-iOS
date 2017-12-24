@@ -49,13 +49,13 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBAction func restartGame() {
         
         //show alert
-        let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+        let customIcon:UIImage = UIImage(named:"popUp_Restart")! // your custom icon UIImage
         let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
         let alertview = JSSAlertView().show(
             self,
-            title: "One More!",
+            title: "Restart!",
             text: "Are You Sure You Want To Restart The Game?",
-            buttonText: "Yep!",
+            buttonText: "Sure",
             cancelButtonText: "Nope",
             color: customColor,
             iconImage: customIcon)
@@ -74,13 +74,13 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     @IBAction func exitGame() {
-        let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+        let customIcon:UIImage = UIImage(named:"popUp_Exit")! // your custom icon UIImage
         let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
         let alertview = JSSAlertView().show(
             self,
-            title: "You Want Out?",
-            text: "Yep I Want To Exit",
-            buttonText: "Yep!",
+            title: "Exit",
+            text: "Do You Want To Exit The Game?",
+            buttonText: "Yes",
             cancelButtonText: "Nope",
             color: customColor,
             iconImage: customIcon)
@@ -97,7 +97,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBAction func undoGame() {
         //show alert
         if (self.boardModel.winInfo.winnerPlayer == nil){
-            let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+            let customIcon:UIImage = UIImage(named:"popUp_Undo")! // your custom icon UIImage
             let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
             let alertview = JSSAlertView().show(
                 self,
@@ -244,7 +244,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
                 
                 /*drawlines(info: boardModel.winInfo)*/
                 // win alert
-                let customIcon:UIImage = UIImage(named:"trophy_Image")! // your custom icon UIImage
+                let customIcon:UIImage = UIImage(named:"popUp_Trophy")! // your custom icon UIImage
                 let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
                 JSSAlertView().show(
                     self,
@@ -267,7 +267,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         else{
             // show an alert
-            let customIcon:UIImage = UIImage(named:"trophy_Image")! // your custom icon UIImage
+            let customIcon:UIImage = UIImage(named:"popUp_Trophy")! // your custom icon UIImage
             let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
             JSSAlertView().show(
                 self,
@@ -521,7 +521,6 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             lineCaShapeLayer.strokeColor = UIColor.lightGray.cgColor
             lineCaShapeLayer.lineJoin = "round"
             lineCaShapeLayer.lineWidth = 8.0
-            
             boardCollectionview.layer.addSublayer(lineCaShapeLayer);
             
         case .none: break
