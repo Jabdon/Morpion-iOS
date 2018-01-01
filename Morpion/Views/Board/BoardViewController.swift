@@ -64,7 +64,9 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         generator.impactOccurred()
         
         alertview.addAction {
-            self.removeLines()
+            if(self.boardModel.winInfo.winnerPlayer != nil){
+             self.removeLines()
+            }
             self.boardModel.refreshArray()
             self.boardCollectionview.reloadData()
             self.showOrDismissScoreBoard()
@@ -121,7 +123,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             }
         }
         else{
-            let customIcon:UIImage = UIImage(named:"error_Image")! // your custom icon UIImage
+            let customIcon:UIImage = UIImage(named:"popUp_Undo")! // your custom icon UIImage
             let customColor:UIColor = UIColorFromHex(0xF3F4F6, alpha: 1) // base color for the alert
             JSSAlertView().show(
                 self,
@@ -340,11 +342,11 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         scoreBoardBottomConstraint.constant =  constantToMoveUpScoreboardBy
         
         // scoreboard
-        scorePlayerOneView.layer.borderWidth = 0.5
-        scorePlayerOneView.layer.borderColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1).cgColor
+        scorePlayerOneView.layer.borderWidth = 1.5 //0.5
+        scorePlayerOneView.layer.borderColor = UIColor.black.cgColor //UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1).cgColor
         scorePlayerOneView.layer.cornerRadius = 5
-        scorePlayerTwoView.layer.borderWidth = 0.5
-        scorePlayerTwoView.layer.borderColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1).cgColor
+        scorePlayerTwoView.layer.borderWidth = 1.5 //0.5
+        scorePlayerTwoView.layer.borderColor = UIColor.black.cgColor //UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1).cgColor
         scorePlayerTwoView.layer.cornerRadius = 5
         
         //scoreboard data
