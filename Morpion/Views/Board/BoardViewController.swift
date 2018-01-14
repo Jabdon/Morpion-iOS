@@ -441,11 +441,12 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
             throw GameError.alignedPointsIsNil
         }
         
-        if( beginningIndex > endingIndex){
+       /* if( beginningIndex > endingIndex){
             let temp = beginningIndex
             beginningIndex = endingIndex
             endingIndex = temp
-        }
+        }*/
+        
         
         let beginningIndexPath = IndexPath.init(row: beginningIndex, section: 0)
         let EndingIndexPath = IndexPath.init(row: endingIndex, section: 0)

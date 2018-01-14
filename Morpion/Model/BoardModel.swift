@@ -83,6 +83,7 @@ class BoardModel: NSObject {
                     winInfo.lineSegment = .diagonalDownward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
+                    winInfo.pointsAligned.sort()
                     return true
                 }
             }
@@ -113,6 +114,7 @@ class BoardModel: NSObject {
                     winInfo.lineSegment = .diagonalDownward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
+                    winInfo.pointsAligned.sort()
                     return true
                 }
             }
@@ -148,6 +150,7 @@ class BoardModel: NSObject {
                     winInfo.lineSegment = .diagonalUpward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
+                    winInfo.pointsAligned.sort()
                     return true
                 }
             }
@@ -178,6 +181,7 @@ class BoardModel: NSObject {
                     winInfo.lineSegment = .diagonalUpward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
+                    winInfo.pointsAligned.sort()
                     return true
                 }
             }
@@ -214,6 +218,7 @@ class BoardModel: NSObject {
                     winInfo.lineSegment = .horizontal
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
+                    winInfo.pointsAligned.sort()
                     return true
                 }
             }
@@ -244,6 +249,7 @@ class BoardModel: NSObject {
                     winInfo.lineSegment = .horizontal
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
+                    winInfo.pointsAligned.sort()
                     return true
                 }
             }
@@ -281,6 +287,7 @@ class BoardModel: NSObject {
                     winInfo.lineSegment = .vertical
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
+                    winInfo.pointsAligned.sort()
                     return true
                 }
             }
@@ -313,6 +320,7 @@ class BoardModel: NSObject {
                     winInfo.lineSegment = .vertical
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
+                    winInfo.pointsAligned.sort()
                     return true
                 }
             }
