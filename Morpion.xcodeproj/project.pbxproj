@@ -364,10 +364,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Morpion/Pods-Morpion-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/JSSAlertView/JSSAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSSAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

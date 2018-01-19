@@ -8,6 +8,7 @@
 
 import UIKit
 import JSSAlertView
+import Motion
 
 class BoardViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -377,44 +378,47 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         if self.boardModel.currentPlayer == self.boardModel.playerOne{
             
-            UIView.animate(withDuration: 0.20, animations: {
+
+            UIView.animate(withDuration: 0.40, animations: {
                 self.setLabelPlayerNameToDefault(View: self.playerTwoNameContainer)
                 self.view.layoutIfNeeded()
+            }, completion: {(finished:Bool) in
+                UIView.animate(withDuration: 0.40, animations: {
+                    self.setLabelPlayerNameToTurn(View: self.playerOneNameContainer)
+                    self.view.layoutIfNeeded()
+                })
             })
-            UIView.animate(withDuration: 0.40, animations: {
-                self.setLabelPlayerNameToTurn(View: self.playerOneNameContainer)
-                self.view.layoutIfNeeded()
-            })
+
             
+    
             
         }
         else{
-            UIView.animate(withDuration: 0.20, animations: {
-                self.setLabelPlayerNameToDefault(View: self.playerOneNameContainer)
-                self.view.layoutIfNeeded()
-            })
+            
             
             UIView.animate(withDuration: 0.40, animations: {
-                self.setLabelPlayerNameToTurn(View: self.playerTwoNameContainer)
+                self.setLabelPlayerNameToDefault(View: self.playerOneNameContainer)
                 self.view.layoutIfNeeded()
+            }, completion: {(finished:Bool) in
+                UIView.animate(withDuration: 0.40, animations: {
+                    self.setLabelPlayerNameToTurn(View: self.playerTwoNameContainer)
+                    self.view.layoutIfNeeded()
+                })
             })
+           
             
             
         }
-        /*
-        UIView.animate(withDuration: 0.35, animations: {
-            self.view.layoutIfNeeded()
-        })
-        */
+
         
     }
     
     func setLabelPlayerNameToTurn(View: UIView){
         View.layer.borderColor = UIColor.black.cgColor
         View.layer.cornerRadius = 10
+        //View.animate(.background(color: .black))
         View.layer.backgroundColor = UIColor.black.cgColor
          let labels = View.subviews.flatMap { $0 as? UILabel }
-       // label.tex = UIColor.white
         for label in labels{
             label.textColor = UIColor.white
         }
@@ -424,6 +428,7 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     func setLabelPlayerNameToDefault( View: UIView){
         View.layer.borderColor = UIColor.black.cgColor
         View.layer.cornerRadius = 10
+        //View.animate(.background(color: .white))
         View.layer.backgroundColor = UIColor(white: 1, alpha: 0.5).cgColor
         //label.textColor = UIColor.lightGray
         let labels = View.subviews.flatMap { $0 as? UILabel }
