@@ -225,7 +225,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gi-xh-vJj" userLabel="undoView">
                                     <rect key="frame" x="0.0" y="0.0" width="75.5" height="106.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvS-zx-sPH">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvS-zx-sPH" customClass="MenuButton" customModule="Morpion" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="75.5" height="75.5"/>
                                             <state key="normal" image="undo"/>
                                             <connections>
@@ -253,7 +253,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWi-x2-zTo" userLabel="restartView">
                                     <rect key="frame" x="113" y="0.0" width="75" height="106.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyc-xy-4Od">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyc-xy-4Od" customClass="MenuButton" customModule="Morpion" customModuleProvider="target">
                                             <rect key="frame" x="0.5" y="0.0" width="75" height="75"/>
                                             <state key="normal" image="restart"/>
                                             <connections>
@@ -281,7 +281,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuU-CE-YZY" userLabel="exitView">
                                     <rect key="frame" x="225" y="0.0" width="75" height="106.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7e-hf-p8o">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7e-hf-p8o" customClass="MenuButton" customModule="Morpion" customModuleProvider="target">
                                             <rect key="frame" x="0.5" y="0.0" width="75" height="75"/>
                                             <state key="normal" image="Menu_Exit"/>
                                             <connections>
