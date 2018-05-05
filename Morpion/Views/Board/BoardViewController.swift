@@ -47,6 +47,9 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var dismissOrShowButton: UIButton!
     @IBOutlet weak var scoreboardView: UIView!
     
+    var gameType : GameType
+    
+    
     @IBAction func restartGame() {
         
         //show alert
@@ -140,8 +143,9 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     
     
-    init(playerOne: User, playerTwo: User) {
-        self.boardModel = BoardModel(player1: playerOne, player2: playerTwo, cellCount: Int(Constant.numberOfColumn)*Int(Constant.numberOfRow))
+    init(playerOne: Player, playerTwo: Player, gameType: GameType) {
+        self.boardModel = BoardModel(player1: playerOne, player2: playerTwo, cellCount: Int(Constant.numberOfColumn)*Int(Constant.numberOfRow), gameType: gameType)
+        self.gameType = gameType
         super.init(nibName: nil, bundle: nil)
     }
     

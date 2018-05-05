@@ -8,7 +8,7 @@
 
 import UIKit
 
-class User: NSObject {
+class Player: NSObject {
     
     enum UserPlayer {
         case playerOne
@@ -30,28 +30,21 @@ class User: NSObject {
     
     
     // init func
-    init( name: String, player: UserPlayer) {
-        self.name = name
-        self.playerType = player
+    init( user: UserData, playerType : UserPlayer) {
+        self.name = user.username
+        self.user_ID = user.userID
+        self.playerType = playerType
         super.init()
-        self.userSymbol = self.userImage(player: player)
+        self.userSymbol = self.userImage(player: playerType)
         
     }
     
-    init( name: String, player: UserPlayer, ID: Int) {
-        self.name = name
-        self.playerType = player
-        self.user_ID = ID
-        super.init()
-        self.userSymbol = self.userImage(player: player)
-        
-    }
     
     // init a Non-player
-    init (player: UserPlayer){
-        self.playerType = player
+    override init (){
+        self.playerType = .none
         super.init()
-        self.userSymbol = self.userImage(player: player)
+        self.userSymbol = self.userImage(player: .none)
     }
     
     private func userImage( player: UserPlayer) -> UIImage{
@@ -67,7 +60,7 @@ class User: NSObject {
     }
     
     // function that will increment user score
-    func userWins(){
+    func playerWins(){
         self.score += 1
     }
     

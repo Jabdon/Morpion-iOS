@@ -21,7 +21,7 @@ class SquareDotCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func loadData( user: User){
+    func loadData( user: Player){
         self.squareDotSymbol.image = user.userSymbol
     }
     /*

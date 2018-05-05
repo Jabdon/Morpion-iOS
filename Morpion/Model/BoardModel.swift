@@ -10,30 +10,32 @@ import UIKit
 
 class BoardModel: NSObject {
     
-    let playerOne: User
-    let playerTwo: User
-    var currentPlayer: User
+    let playerOne: Player
+    let playerTwo: Player
+    var currentPlayer: Player
     var cellcount : Int
+    let gameType: GameType
     
-    var arrayOfUserDot: [User]
+    var arrayOfUserDot: [Player]
     var winInfo = winningInfo()
     var lastPlayedPointIndex: Int = -1
     
     
-    init(player1: User, player2: User, cellCount: Int){
+    init(player1: Player, player2: Player, cellCount: Int, gameType: GameType){
         self.playerOne = player1
         self.playerTwo = player2
         self.currentPlayer = player1
         self.cellcount = cellCount
-        self.arrayOfUserDot = Array(repeatElement(User(player: .none), count: cellcount))
+        self.gameType = gameType
+        self.arrayOfUserDot = Array(repeatElement( Player(), count: cellcount))
         
         super.init()
     }
     
     private func registerAMove(indexPath: IndexPath)-> Bool {
         // since there is possiblity that user may be nil
-        let user : User = self.arrayOfUserDot[indexPath.row]
-        if user.playerType == .none {
+        let player : Player = self.arrayOfUserDot[indexPath.row]
+        if player.playerType == .none {
             arrayOfUserDot[indexPath.row] = currentPlayer
             //user = currentPlayer
             return true
@@ -79,7 +81,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if pointsAligned.count >= 5 {
                     // yay current player wins
-                    currentPlayer.userWins()
+                    currentPlayer.playerWins()
                     winInfo.lineSegment = .diagonalDownward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
@@ -110,7 +112,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if pointsAligned.count >= 5 {
                     // yay current player wins
-                    currentPlayer.userWins()
+                    currentPlayer.playerWins()
                     winInfo.lineSegment = .diagonalDownward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
@@ -146,7 +148,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if pointsAligned.count >= 5 {
                     // yay current player wins
-                    currentPlayer.userWins()
+                    currentPlayer.playerWins()
                     winInfo.lineSegment = .diagonalUpward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
@@ -177,7 +179,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if pointsAligned.count >= 5 {
                     // yay current player wins
-                    currentPlayer.userWins()
+                    currentPlayer.playerWins()
                     winInfo.lineSegment = .diagonalUpward
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
@@ -214,7 +216,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if pointsAligned.count >= 5 {
                     // yay current player wins
-                    currentPlayer.userWins()
+                    currentPlayer.playerWins()
                     winInfo.lineSegment = .horizontal
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
@@ -245,7 +247,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if pointsAligned.count >= 5 {
                     // yay current player wins
-                    currentPlayer.userWins()
+                    currentPlayer.playerWins()
                     winInfo.lineSegment = .horizontal
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
@@ -283,7 +285,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if pointsAligned.count >= 5 {
                     // yay current player wins
-                    currentPlayer.userWins()
+                    currentPlayer.playerWins()
                     winInfo.lineSegment = .vertical
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
@@ -316,7 +318,7 @@ class BoardModel: NSObject {
                 // check if alignedPoints reach 5
                 if pointsAligned.count >= 5 {
                     // yay current player wins
-                    currentPlayer.userWins()
+                    currentPlayer.playerWins()
                     winInfo.lineSegment = .vertical
                     winInfo.pointsAligned = pointsAligned
                     winInfo.winnerPlayer = currentPlayer
@@ -380,14 +382,14 @@ class BoardModel: NSObject {
     func refreshArray(){
         self.arrayOfUserDot.removeAll()
         lastPlayedPointIndex = -1
-        self.arrayOfUserDot = Array(repeatElement(User(player: .none), count: cellcount))
+        self.arrayOfUserDot = Array(repeatElement(Player(), count: cellcount))
         winInfo.resetWinningInfo()
     }
     
     
     func undoPlay(){
         if(lastPlayedPointIndex >= 0 && winInfo.winnerPlayer == nil){
-           arrayOfUserDot[lastPlayedPointIndex] = User(player: .none)
+           arrayOfUserDot[lastPlayedPointIndex] = Player()
             lastPlayedPointIndex = -1
             changeUserTurn()
         }
@@ -397,7 +399,7 @@ class BoardModel: NSObject {
 
 struct winningInfo{
     var lineSegment: lineSegment = .none
-    var winnerPlayer: User? = nil
+    var winnerPlayer: Player? = nil
     var pointsAligned: [Int] = [];
     
     mutating func resetWinningInfo(){

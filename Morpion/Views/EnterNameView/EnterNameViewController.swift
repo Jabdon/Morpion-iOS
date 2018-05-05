@@ -45,10 +45,12 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
     @IBAction func startGame(_ sender: Any){
         
         if let playerOneName = playerOneLabel.text,let playerTwoName = playerTwoLabel.text, !playerOneName.isEmpty, !playerTwoName.isEmpty  {
-            let player1 = User(name: playerOneName, player: .playerOne)
-            let player2 = User(name: playerTwoName, player: .playerTwo)
+            let user1 = UserData(userID: 1, username: playerOneName)
+            let user2 = UserData(userID: 2, username: playerTwoName)
+            let player1 = Player(user: user1, playerType: .playerOne)
+            let player2 = Player(user: user2, playerType: .playerTwo)
             
-            let boardCollectionView = BoardViewController(playerOne: player1, playerTwo: player2)
+            let boardCollectionView = BoardViewController(playerOne: player1, playerTwo: player2, gameType: .Local)
             self.show(boardCollectionView, sender: nil)
           
             

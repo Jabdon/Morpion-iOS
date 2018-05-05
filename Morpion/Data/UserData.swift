@@ -8,10 +8,16 @@
 
 import Foundation
 
-struct user {
+struct UserData {
+    let userID: Int
     let username: String
-    let email: String
-    let profileImage: String
-    let numberOfWins: Int
-    let numberOfLosses: Int
+    var email: String?
+    var profileImage: String?
+    var numberOfWins: Int?
+    var numberOfLosses: Int?
+    
+    init(userID: Int, username: String) {
+        self.userID = userID
+        self.username = username
+    }
 }
