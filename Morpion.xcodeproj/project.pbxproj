@@ -36,6 +36,7 @@
 		EBFEEABC209E0F9B0086248F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEEABB209E0F9B0086248F /* UserData.swift */; };
 		EBFEEABE209E0FC60086248F /* ConnectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEEABD209E0FC60086248F /* ConnectionData.swift */; };
 		EBFEEAC1209E1D8C0086248F /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEEAC0209E1D8C0086248F /* GameType.swift */; };
+		EBFEEAC3209E30330086248F /* LineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEEAC2209E30330086248F /* LineSegment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		EBFEEABB209E0F9B0086248F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		EBFEEABD209E0FC60086248F /* ConnectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionData.swift; sourceTree = "<group>"; };
 		EBFEEAC0209E1D8C0086248F /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
+		EBFEEAC2209E30330086248F /* LineSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSegment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				EBA9FB811FB757F100D3187F /* BoardModel.swift */,
 				EB6D4AB61FA9492B00BB1036 /* User.swift */,
 				EBFEEAC0209E1D8C0086248F /* GameType.swift */,
+				EBFEEAC2209E30330086248F /* LineSegment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				EBDC9D492023F1CF0091E130 /* MenuButton.swift in Sources */,
 				EB6D4A9C1FA6222200BB1036 /* NameTextField.swift in Sources */,
 				EBFEEAC1209E1D8C0086248F /* GameType.swift in Sources */,
+				EBFEEAC3209E30330086248F /* LineSegment.swift in Sources */,
 				EB6D4AB71FA9492B00BB1036 /* User.swift in Sources */,
 				EB6D4AC21FABF46400BB1036 /* SquareDotCell.swift in Sources */,
 				EBC47A1F1FA557A600AC96AE /* OptionViewControler.swift in Sources */,

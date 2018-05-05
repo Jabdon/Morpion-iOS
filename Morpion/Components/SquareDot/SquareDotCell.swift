@@ -51,10 +51,4 @@ class SquareDotCell: UICollectionViewCell {
  */
 }
 
-enum lineSegment {
-    case horizontal
-    case vertical
-    case diagonalUpward
-    case diagonalDownward
-    case none
-}
+
