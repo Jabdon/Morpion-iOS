@@ -33,6 +33,8 @@
 		EBC47A281FA60CD900AC96AE /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC47A271FA60CD900AC96AE /* RoundButton.swift */; };
 		EBDC9D492023F1CF0091E130 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDC9D482023F1CF0091E130 /* MenuButton.swift */; };
 		EBF23F7E1FED641E00980FF4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF23F7D1FED641E00980FF4 /* Errors.swift */; };
+		EBFEEABC209E0F9B0086248F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEEABB209E0F9B0086248F /* UserData.swift */; };
+		EBFEEABE209E0FC60086248F /* ConnectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEEABD209E0FC60086248F /* ConnectionData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		EBC47A271FA60CD900AC96AE /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		EBDC9D482023F1CF0091E130 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		EBF23F7D1FED641E00980FF4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		EBFEEABB209E0F9B0086248F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		EBFEEABD209E0FC60086248F /* ConnectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,8 @@
 		EBC47A081FA54DAF00AC96AE /* Morpion */ = {
 			isa = PBXGroup;
 			children = (
+				EBFEEABF209E11550086248F /* Client */,
+				EBFEEABA209E0F780086248F /* Data */,
 				EBC47A261FA60CA100AC96AE /* Components */,
 				EB6D4AB31FA9481A00BB1036 /* Model */,
 				EBC47A1C1FA5573C00AC96AE /* Views */,
@@ -225,6 +231,22 @@
 				EBA9FB7F1FB752C200D3187F /* Constants.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		EBFEEABA209E0F780086248F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EBFEEABB209E0F9B0086248F /* UserData.swift */,
+				EBFEEABD209E0FC60086248F /* ConnectionData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EBFEEABF209E11550086248F /* Client */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 		ED31112A8340CE29FE69D8EC /* Pods */ = {
@@ -389,10 +411,12 @@
 				EB6D4AA91FA7F8C600BB1036 /* ScreenTitleLabel.swift in Sources */,
 				EBF23F7E1FED641E00980FF4 /* Errors.swift in Sources */,
 				EB6D4AC81FABF59E00BB1036 /* BoardViewController.swift in Sources */,
+				EBFEEABC209E0F9B0086248F /* UserData.swift in Sources */,
 				EB6D4AB11FA8ABAB00BB1036 /* CustomAlertViewController.swift in Sources */,
 				EBC47A281FA60CD900AC96AE /* RoundButton.swift in Sources */,
 				EB02656B1FDC3EE8008E9ABC /* PlayerNameText.swift in Sources */,
 				EBC47A0A1FA54DAF00AC96AE /* AppDelegate.swift in Sources */,
+				EBFEEABE209E0FC60086248F /* ConnectionData.swift in Sources */,
 				EB6D4AA31FA6791300BB1036 /* TextFieldView.swift in Sources */,
 				EBC47A231FA55AC900AC96AE /* EnterNameViewController.swift in Sources */,
 				EBDC9D492023F1CF0091E130 /* MenuButton.swift in Sources */,

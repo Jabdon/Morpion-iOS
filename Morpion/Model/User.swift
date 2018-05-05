@@ -17,6 +17,7 @@ class User: NSObject {
     }
     
     var playerType: UserPlayer
+    
 
     //user name
     var name: String!
@@ -24,12 +25,23 @@ class User: NSObject {
     var score: Int = 0
     // user symbol/mark
     var userSymbol: UIImage!
+    // user ID
+    var user_ID: Int?
     
     
     // init func
     init( name: String, player: UserPlayer) {
         self.name = name
         self.playerType = player
+        super.init()
+        self.userSymbol = self.userImage(player: player)
+        
+    }
+    
+    init( name: String, player: UserPlayer, ID: Int) {
+        self.name = name
+        self.playerType = player
+        self.user_ID = ID
         super.init()
         self.userSymbol = self.userImage(player: player)
         

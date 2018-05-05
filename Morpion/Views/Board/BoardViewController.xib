@@ -283,7 +283,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7e-hf-p8o" customClass="MenuButton" customModule="Morpion" customModuleProvider="target">
                                             <rect key="frame" x="0.5" y="0.0" width="75" height="75"/>
-                                            <state key="normal" image="Menu_Exit"/>
+                                            <state key="normal" image="exit"/>
                                             <connections>
                                                 <action selector="exitGame" destination="-1" eventType="touchUpInside" id="9bJ-Zf-n9k"/>
                                             </connections>
@@ -378,11 +378,11 @@
         </view>
     </objects>
     <resources>
-        <image name="Menu_Exit" width="50" height="50"/>
         <image name="arrowDown" width="16" height="16"/>
         <image name="circle" width="24" height="24"/>
         <image name="cross" width="24" height="24"/>
-        <image name="restart" width="50" height="50"/>
-        <image name="undo" width="50" height="50"/>
+        <image name="exit" width="16" height="16"/>
+        <image name="restart" width="16" height="16"/>
+        <image name="undo" width="16" height="16"/>
     </resources>
 </document>
