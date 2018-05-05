@@ -343,12 +343,12 @@ class BoardViewController: UIViewController, UICollectionViewDataSource, UIColle
         scoreBoardBottomConstraint.constant =  constantToMoveUpScoreboardBy
         
         // scoreboard
-        scorePlayerOneView.layer.borderWidth = 1.5 //0.5
-        scorePlayerOneView.layer.borderColor = UIColor.black.cgColor //UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1).cgColor
-        scorePlayerOneView.layer.cornerRadius = 5
-        scorePlayerTwoView.layer.borderWidth = 1.5 //0.5
-        scorePlayerTwoView.layer.borderColor = UIColor.black.cgColor //UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1).cgColor
-        scorePlayerTwoView.layer.cornerRadius = 5
+        scorePlayerOneView.layer.borderWidth = 1 //0.5
+        scorePlayerOneView.layer.borderColor =  UIColor(red: 90/255, green: 105/255, blue: 120/255, alpha: 1).cgColor
+        scorePlayerOneView.layer.cornerRadius = 17
+        scorePlayerTwoView.layer.borderWidth = 1 //0.5
+        scorePlayerTwoView.layer.borderColor = UIColor(red: 90/255, green: 105/255, blue: 120/255, alpha: 1).cgColor
+        scorePlayerTwoView.layer.cornerRadius = 17
         
         //scoreboard data
         scoreBoardPlayerOneName.text = boardModel.playerOne.name
