@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInViewController" customModule="Morpion" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfa-pC-1ER">
+                    <rect key="frame" x="60" y="20" width="200" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="AmB-aV-7Uq"/>
+                        <constraint firstAttribute="height" constant="30" id="CoU-9H-BUr"/>
+                    </constraints>
+                    <color key="tintColor" red="0.27843137254901962" green="0.32156862745098036" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Want To create An Account"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IW2-aE-HQY" userLabel="usernameTextView">
+                    <rect key="frame" x="30" y="172" width="260" height="50"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xxU-IH-hDZ" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="R3U-5Q-7O1"/>
+                        <constraint firstAttribute="bottom" secondItem="xxU-IH-hDZ" secondAttribute="bottom" id="a4W-CE-bQF"/>
+                        <constraint firstItem="xxU-IH-hDZ" firstAttribute="leading" secondItem="IW2-aE-HQY" secondAttribute="leading" id="ktI-pJ-yTY"/>
+                        <constraint firstItem="xxU-IH-hDZ" firstAttribute="top" secondItem="IW2-aE-HQY" secondAttribute="top" id="vRm-k0-75A"/>
+                        <constraint firstAttribute="trailing" secondItem="xxU-IH-hDZ" secondAttribute="trailing" id="wfK-dh-eGi"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="to1-vn-NRd" userLabel="passwordTextView">
+                    <rect key="frame" x="30" y="292" width="260" height="50"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QgO-ZA-8Zu" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="2gS-Iw-zOh"/>
+                        <constraint firstItem="QgO-ZA-8Zu" firstAttribute="leading" secondItem="to1-vn-NRd" secondAttribute="leading" id="Ihm-5w-mnf"/>
+                        <constraint firstAttribute="trailing" secondItem="QgO-ZA-8Zu" secondAttribute="trailing" id="cwa-Fg-Wg6"/>
+                        <constraint firstItem="QgO-ZA-8Zu" firstAttribute="top" secondItem="to1-vn-NRd" secondAttribute="top" id="nX4-mW-QPz"/>
+                        <constraint firstAttribute="bottom" secondItem="QgO-ZA-8Zu" secondAttribute="bottom" id="yuK-Qv-KmK"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKn-kJ-mO7">
+                    <rect key="frame" x="102.5" y="518" width="115" height="30"/>
+                    <state key="normal" title="Forgot Password"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0R-Da-CLD" customClass="RoundButton" customModule="Morpion" customModuleProvider="target">
+                    <rect key="frame" x="35" y="463" width="250" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="APy-T8-txO"/>
+                        <constraint firstAttribute="width" constant="250" id="Hg0-dN-hqk"/>
+                    </constraints>
+                    <state key="normal" title="Log in"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dismiss" translatesAutoresizingMaskIntoConstraints="NO" id="hVc-SY-3gH">
+                    <rect key="frame" x="30" y="27" width="16" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BKn-kJ-mO7" firstAttribute="top" secondItem="j0R-Da-CLD" secondAttribute="bottom" constant="20" id="1LX-aU-QzN"/>
+                <constraint firstItem="IW2-aE-HQY" firstAttribute="top" secondItem="Pfa-pC-1ER" secondAttribute="bottom" constant="122" id="Ajx-wa-xJW"/>
+                <constraint firstItem="BKn-kJ-mO7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="HZt-c9-Q9G"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="to1-vn-NRd" secondAttribute="trailing" constant="30" id="OHs-dI-oZ2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IW2-aE-HQY" secondAttribute="trailing" constant="30" id="XJM-Mk-o8H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BKn-kJ-mO7" secondAttribute="bottom" constant="20" id="YAI-1Z-bAG"/>
+                <constraint firstItem="Pfa-pC-1ER" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YNO-RY-aUS"/>
+                <constraint firstItem="Pfa-pC-1ER" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dVC-69-27y"/>
+                <constraint firstItem="j0R-Da-CLD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="elm-rL-Ge1"/>
+                <constraint firstItem="to1-vn-NRd" firstAttribute="top" secondItem="xxU-IH-hDZ" secondAttribute="bottom" constant="70" id="gQC-qg-npa"/>
+                <constraint firstItem="to1-vn-NRd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="pHf-5K-LyC"/>
+                <constraint firstItem="IW2-aE-HQY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="t5r-iX-i3J"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dismiss" width="16" height="16"/>
+    </resources>
+</document>

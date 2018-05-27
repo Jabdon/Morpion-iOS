@@ -13,6 +13,8 @@
 		EB16AC101FFA9F4E00B32540 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB16AC0E1FFA9F4E00B32540 /* SplashViewController.xib */; };
 		EB2F062820B1C8D800361B9A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F062620B1C8D800361B9A /* SignUpViewController.swift */; };
 		EB2F062920B1C8D800361B9A /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F062720B1C8D800361B9A /* SignUpViewController.xib */; };
+		EB2F062C20BAE7FB00361B9A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F062A20BAE7FB00361B9A /* LogInViewController.swift */; };
+		EB2F062D20BAE7FB00361B9A /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F062B20BAE7FB00361B9A /* LogInViewController.xib */; };
 		EB6D4A9C1FA6222200BB1036 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */; };
 		EB6D4AA31FA6791300BB1036 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */; };
 		EB6D4AA91FA7F8C600BB1036 /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */; };
@@ -50,6 +52,8 @@
 		EB16AC0E1FFA9F4E00B32540 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		EB2F062620B1C8D800361B9A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EB2F062720B1C8D800361B9A /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		EB2F062A20BAE7FB00361B9A /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		EB2F062B20BAE7FB00361B9A /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
 		EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 		EB2F061F209E6B9C00361B9A /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
+				EB2F062A20BAE7FB00361B9A /* LogInViewController.swift */,
+				EB2F062B20BAE7FB00361B9A /* LogInViewController.xib */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 				EBC47A141FA54DAF00AC96AE /* LaunchScreen.storyboard in Resources */,
 				EBC47A111FA54DAF00AC96AE /* Assets.xcassets in Resources */,
 				EB16AC101FFA9F4E00B32540 /* SplashViewController.xib in Resources */,
+				EB2F062D20BAE7FB00361B9A /* LogInViewController.xib in Resources */,
 				EB2F062920B1C8D800361B9A /* SignUpViewController.xib in Resources */,
 				EBC47A241FA55AC900AC96AE /* EnterNameViewController.xib in Resources */,
 				EB6D4AC31FABF46400BB1036 /* SquareDotCell.xib in Resources */,
@@ -471,6 +478,7 @@
 				EBFEEAC3209E30330086248F /* LineSegment.swift in Sources */,
 				EB6D4AB71FA9492B00BB1036 /* User.swift in Sources */,
 				EB6D4AC21FABF46400BB1036 /* SquareDotCell.swift in Sources */,
+				EB2F062C20BAE7FB00361B9A /* LogInViewController.swift in Sources */,
 				EBC47A1F1FA557A600AC96AE /* OptionViewControler.swift in Sources */,
 				EBA9FB821FB757F100D3187F /* BoardModel.swift in Sources */,
 				EBA9FB801FB752C200D3187F /* Constants.swift in Sources */,
