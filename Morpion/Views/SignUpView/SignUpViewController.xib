@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="Morpion" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS2-Na-wTB">
+                    <rect key="frame" x="72" y="30" width="176" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="nSd-wI-K1o"/>
+                    </constraints>
+                    <state key="normal" title="Already have an account?"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNt-Lw-Fj3" userLabel="imageView">
+                    <rect key="frame" x="0.0" y="75" width="320" height="160"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YYG-7F-JK2">
+                            <rect key="frame" x="110" y="30" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="gBv-NR-jkx"/>
+                                <constraint firstAttribute="height" constant="100" id="gmi-1a-eeP"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="YYG-7F-JK2" secondAttribute="bottom" constant="30" id="6fn-2s-Nae"/>
+                        <constraint firstItem="YYG-7F-JK2" firstAttribute="centerX" secondItem="NNt-Lw-Fj3" secondAttribute="centerX" id="IE7-eo-ub7"/>
+                        <constraint firstItem="YYG-7F-JK2" firstAttribute="top" secondItem="NNt-Lw-Fj3" secondAttribute="top" constant="30" id="o3W-5k-gFB"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWs-R2-O1t" userLabel="textView">
+                    <rect key="frame" x="0.0" y="235" width="320" height="190"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGl-1M-4zl" userLabel="usernameTextView">
+                            <rect key="frame" x="20" y="0.0" width="280" height="50"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mH5-46-VHm" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="mH5-46-VHm" secondAttribute="trailing" id="1hW-Qh-c5e"/>
+                                <constraint firstAttribute="bottom" secondItem="mH5-46-VHm" secondAttribute="bottom" id="QLi-BN-p37"/>
+                                <constraint firstItem="mH5-46-VHm" firstAttribute="leading" secondItem="SGl-1M-4zl" secondAttribute="leading" id="U5s-vD-SPG"/>
+                                <constraint firstAttribute="height" constant="50" id="iG4-Z1-ATx"/>
+                                <constraint firstItem="mH5-46-VHm" firstAttribute="top" secondItem="SGl-1M-4zl" secondAttribute="top" id="jT1-5m-pLS"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3v-s4-Ype" userLabel="usernameTextView">
+                            <rect key="frame" x="20" y="70" width="280" height="50"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7R2-kd-Zgt" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="7R2-kd-Zgt" firstAttribute="leading" secondItem="B3v-s4-Ype" secondAttribute="leading" id="FAX-Rv-Ibh"/>
+                                <constraint firstAttribute="bottom" secondItem="7R2-kd-Zgt" secondAttribute="bottom" id="Sod-GS-QjT"/>
+                                <constraint firstItem="7R2-kd-Zgt" firstAttribute="top" secondItem="B3v-s4-Ype" secondAttribute="top" id="avU-dX-zn6"/>
+                                <constraint firstAttribute="trailing" secondItem="7R2-kd-Zgt" secondAttribute="trailing" id="rkj-ah-gWZ"/>
+                                <constraint firstAttribute="height" constant="50" id="tvt-xT-S7e"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxL-1c-zC0" userLabel="usernameTextView">
+                            <rect key="frame" x="20" y="140" width="280" height="50"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3DN-Fx-chr" customClass="NameTextField" customModule="Morpion" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="3DN-Fx-chr" firstAttribute="top" secondItem="yxL-1c-zC0" secondAttribute="top" id="KQo-um-BGb"/>
+                                <constraint firstAttribute="height" constant="50" id="PWH-6P-Rh4"/>
+                                <constraint firstAttribute="bottom" secondItem="3DN-Fx-chr" secondAttribute="bottom" id="QBV-ZE-r4p"/>
+                                <constraint firstAttribute="trailing" secondItem="3DN-Fx-chr" secondAttribute="trailing" id="Z9v-Ze-uwn"/>
+                                <constraint firstItem="3DN-Fx-chr" firstAttribute="leading" secondItem="yxL-1c-zC0" secondAttribute="leading" id="kVx-4u-EnY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="SGl-1M-4zl" firstAttribute="leading" secondItem="JWs-R2-O1t" secondAttribute="leading" constant="20" id="68J-T9-inm"/>
+                        <constraint firstItem="SGl-1M-4zl" firstAttribute="top" secondItem="JWs-R2-O1t" secondAttribute="top" id="BDv-AZ-rqi"/>
+                        <constraint firstAttribute="trailing" secondItem="B3v-s4-Ype" secondAttribute="trailing" constant="20" id="Bzd-2e-4hn"/>
+                        <constraint firstItem="B3v-s4-Ype" firstAttribute="top" secondItem="SGl-1M-4zl" secondAttribute="bottom" constant="20" id="E3m-jt-MUo"/>
+                        <constraint firstItem="yxL-1c-zC0" firstAttribute="leading" secondItem="JWs-R2-O1t" secondAttribute="leading" constant="20" id="ENN-Dn-whE"/>
+                        <constraint firstItem="yxL-1c-zC0" firstAttribute="top" secondItem="B3v-s4-Ype" secondAttribute="bottom" constant="20" id="Nbz-uK-EZU"/>
+                        <constraint firstAttribute="trailing" secondItem="yxL-1c-zC0" secondAttribute="trailing" constant="20" id="TXN-qL-R2C"/>
+                        <constraint firstAttribute="bottom" secondItem="yxL-1c-zC0" secondAttribute="bottom" id="mDY-rP-Yo9"/>
+                        <constraint firstAttribute="trailing" secondItem="SGl-1M-4zl" secondAttribute="trailing" constant="20" id="sSo-Qf-dLC"/>
+                        <constraint firstItem="B3v-s4-Ype" firstAttribute="leading" secondItem="JWs-R2-O1t" secondAttribute="leading" constant="20" id="vEx-T4-ydr"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlR-GS-JYA" customClass="RoundButton" customModule="Morpion" customModuleProvider="target">
+                    <rect key="frame" x="35" y="495" width="250" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="SIx-1Y-jJW"/>
+                        <constraint firstAttribute="width" constant="250" id="n0R-70-fJF"/>
+                    </constraints>
+                    <state key="normal" title="Sign Up"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="NNt-Lw-Fj3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9pI-4r-3qi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JWs-R2-O1t" secondAttribute="trailing" id="9rR-rF-7Ga"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NNt-Lw-Fj3" secondAttribute="trailing" id="LYr-LK-AhP"/>
+                <constraint firstItem="JWs-R2-O1t" firstAttribute="top" secondItem="NNt-Lw-Fj3" secondAttribute="bottom" id="QA1-3T-MAL"/>
+                <constraint firstItem="nlR-GS-JYA" firstAttribute="top" secondItem="JWs-R2-O1t" secondAttribute="bottom" constant="70" id="RKN-5c-UCI"/>
+                <constraint firstItem="sS2-Na-wTB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="goy-uf-qoG"/>
+                <constraint firstItem="JWs-R2-O1t" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="imA-xG-aTB"/>
+                <constraint firstItem="sS2-Na-wTB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="sQ4-XK-Lox"/>
+                <constraint firstItem="NNt-Lw-Fj3" firstAttribute="top" secondItem="sS2-Na-wTB" secondAttribute="bottom" constant="15" id="vKU-xN-oUy"/>
+                <constraint firstItem="nlR-GS-JYA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="x9j-oD-cSk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="100" y="103"/>
+        </view>
+    </objects>
+</document>
