@@ -15,6 +15,8 @@
 		EB2F062920B1C8D800361B9A /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F062720B1C8D800361B9A /* SignUpViewController.xib */; };
 		EB2F062C20BAE7FB00361B9A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F062A20BAE7FB00361B9A /* LogInViewController.swift */; };
 		EB2F062D20BAE7FB00361B9A /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F062B20BAE7FB00361B9A /* LogInViewController.xib */; };
+		EB2F063020BAF6FF00361B9A /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F062E20BAF6FF00361B9A /* MyProfileViewController.swift */; };
+		EB2F063120BAF6FF00361B9A /* MyProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F062F20BAF6FF00361B9A /* MyProfileViewController.xib */; };
 		EB6D4A9C1FA6222200BB1036 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */; };
 		EB6D4AA31FA6791300BB1036 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */; };
 		EB6D4AA91FA7F8C600BB1036 /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */; };
@@ -54,6 +56,8 @@
 		EB2F062720B1C8D800361B9A /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		EB2F062A20BAE7FB00361B9A /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		EB2F062B20BAE7FB00361B9A /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
+		EB2F062E20BAF6FF00361B9A /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		EB2F062F20BAF6FF00361B9A /* MyProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileViewController.xib; sourceTree = "<group>"; };
 		EB6D4A9B1FA6222200BB1036 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		EB6D4AA21FA6791300BB1036 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		EB6D4AA81FA7F8C600BB1036 /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
@@ -138,11 +142,48 @@
 			path = SignUpView;
 			sourceTree = "<group>";
 		};
-		EB2F0621209E6BBD00361B9A /* New Group */ = {
+		EB2F0621209E6BBD00361B9A /* OwnProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				EB2F062E20BAF6FF00361B9A /* MyProfileViewController.swift */,
+				EB2F062F20BAF6FF00361B9A /* MyProfileViewController.xib */,
+			);
+			path = OwnProfileView;
+			sourceTree = "<group>";
+		};
+		EB2F063220BAF72500361B9A /* ConnectionListView */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "New Group";
+			path = ConnectionListView;
+			sourceTree = "<group>";
+		};
+		EB2F063320BAF78400361B9A /* OtherProfileView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OtherProfileView;
+			sourceTree = "<group>";
+		};
+		EB2F063420BAF79E00361B9A /* ConnectionDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ConnectionDetailsView;
+			sourceTree = "<group>";
+		};
+		EB2F063520BAF7B600361B9A /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		EB2F063620BAF87B00361B9A /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 		EB6D4A9D1FA676B600BB1036 /* TextFieldView */ = {
@@ -250,25 +291,30 @@
 		EBC47A1C1FA5573C00AC96AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EB2F0621209E6BBD00361B9A /* New Group */,
+				EB2F063620BAF87B00361B9A /* SearchView */,
+				EB2F063520BAF7B600361B9A /* SettingsView */,
+				EB2F063420BAF79E00361B9A /* ConnectionDetailsView */,
+				EB2F063320BAF78400361B9A /* OtherProfileView */,
+				EB2F063220BAF72500361B9A /* ConnectionListView */,
+				EB2F0621209E6BBD00361B9A /* OwnProfileView */,
 				EB2F0620209E6BAE00361B9A /* SignUpView */,
 				EB2F061F209E6B9C00361B9A /* LoginView */,
 				EB2F061E209E6B7B00361B9A /* GameTypeView */,
 				EB16AC0C1FFA9F0100B32540 /* SplashView */,
 				EB6D4AC51FABF4FB00BB1036 /* EnterNameView */,
 				EB6D4AC41FABF4E300BB1036 /* OptionView */,
-				EBC47A251FA55AE700AC96AE /* Board */,
+				EBC47A251FA55AE700AC96AE /* BoardView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		EBC47A251FA55AE700AC96AE /* Board */ = {
+		EBC47A251FA55AE700AC96AE /* BoardView */ = {
 			isa = PBXGroup;
 			children = (
 				EB6D4AC61FABF59E00BB1036 /* BoardViewController.swift */,
 				EB6D4AC71FABF59E00BB1036 /* BoardViewController.xib */,
 			);
-			path = Board;
+			path = BoardView;
 			sourceTree = "<group>";
 		};
 		EBC47A261FA60CA100AC96AE /* Components */ = {
@@ -373,6 +419,7 @@
 			files = (
 				EBC47A201FA557A600AC96AE /* OptionViewControler.xib in Resources */,
 				EBC47A141FA54DAF00AC96AE /* LaunchScreen.storyboard in Resources */,
+				EB2F063120BAF6FF00361B9A /* MyProfileViewController.xib in Resources */,
 				EBC47A111FA54DAF00AC96AE /* Assets.xcassets in Resources */,
 				EB16AC101FFA9F4E00B32540 /* SplashViewController.xib in Resources */,
 				EB2F062D20BAE7FB00361B9A /* LogInViewController.xib in Resources */,
@@ -466,6 +513,7 @@
 				EB6D4AC81FABF59E00BB1036 /* BoardViewController.swift in Sources */,
 				EBFEEABC209E0F9B0086248F /* UserData.swift in Sources */,
 				EB6D4AB11FA8ABAB00BB1036 /* CustomAlertViewController.swift in Sources */,
+				EB2F063020BAF6FF00361B9A /* MyProfileViewController.swift in Sources */,
 				EBC47A281FA60CD900AC96AE /* RoundButton.swift in Sources */,
 				EB02656B1FDC3EE8008E9ABC /* PlayerNameText.swift in Sources */,
 				EBC47A0A1FA54DAF00AC96AE /* AppDelegate.swift in Sources */,

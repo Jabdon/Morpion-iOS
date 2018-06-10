@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS2-Na-wTB">
-                    <rect key="frame" x="99.5" y="30" width="176" height="30"/>
+                    <rect key="frame" x="99.5" y="20" width="176" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="nSd-wI-K1o"/>
                     </constraints>
@@ -30,7 +30,7 @@
                     </state>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNt-Lw-Fj3" userLabel="imageView">
-                    <rect key="frame" x="0.0" y="75" width="375" height="160"/>
+                    <rect key="frame" x="0.0" y="65" width="375" height="160"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YYG-7F-JK2">
                             <rect key="frame" x="137.5" y="30" width="100" height="100"/>
@@ -48,7 +48,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWs-R2-O1t" userLabel="textView">
-                    <rect key="frame" x="0.0" y="235" width="375" height="190"/>
+                    <rect key="frame" x="0.0" y="225" width="375" height="190"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGl-1M-4zl" userLabel="usernameTextView">
                             <rect key="frame" x="20" y="0.0" width="335" height="50"/>
@@ -123,13 +123,17 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlR-GS-JYA" customClass="RoundButton" customModule="Morpion" customModuleProvider="target">
-                    <rect key="frame" x="62.5" y="495" width="250" height="35"/>
+                    <rect key="frame" x="62.5" y="485" width="250" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="SIx-1Y-jJW"/>
                         <constraint firstAttribute="width" constant="250" id="n0R-70-fJF"/>
                     </constraints>
                     <state key="normal" title="Sign Up"/>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dismiss" translatesAutoresizingMaskIntoConstraints="NO" id="Yo7-f3-ZHz">
+                    <rect key="frame" x="30" y="27" width="16" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -140,12 +144,15 @@
                 <constraint firstItem="nlR-GS-JYA" firstAttribute="top" secondItem="JWs-R2-O1t" secondAttribute="bottom" constant="70" id="RKN-5c-UCI"/>
                 <constraint firstItem="sS2-Na-wTB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="goy-uf-qoG"/>
                 <constraint firstItem="JWs-R2-O1t" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="imA-xG-aTB"/>
-                <constraint firstItem="sS2-Na-wTB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="sQ4-XK-Lox"/>
+                <constraint firstItem="sS2-Na-wTB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sQ4-XK-Lox"/>
                 <constraint firstItem="NNt-Lw-Fj3" firstAttribute="top" secondItem="sS2-Na-wTB" secondAttribute="bottom" constant="15" id="vKU-xN-oUy"/>
                 <constraint firstItem="nlR-GS-JYA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="x9j-oD-cSk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="100" y="103"/>
+            <point key="canvasLocation" x="99.5" y="102.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="dismiss" width="16" height="16"/>
+    </resources>
 </document>
